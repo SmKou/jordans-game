@@ -8,14 +8,13 @@ game.run()
 document.addEventListener('pointerdown', e => {
     const id = e.target.id
     const text = e.target.textContent
-
-    if (id === 'pause')
-        game.pause()
     
     switch (id) {
         case 'up':
             game.move({ dx: 0, dy: -1 })
             break
+        default:
+            game.pause()
     }
 })
 document.addEventListener('pointerup', e => console.log(e))

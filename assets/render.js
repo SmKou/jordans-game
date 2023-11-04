@@ -1,25 +1,17 @@
 const init = ({ width, height } = {}) => {
-    let ctx, screen, running, isRunning, timeout;
+    let ctx, screen, player, running, isRunning, timeout;
 
     isRunning = true
-
-    const player = {
-        pos: { 
-            x: width / 2, 
-            y: height / 2 
-        },
-        move: []
-    }
 
     const move = function(params) { player.move.push({ 
         dx: params.dx * screen.tile, 
         dy: params.dy * screen.tile
     }) }
 
-    const load = function(width, height) {
+    const load = function() {
         const cvs = document.getElementById('app')
-        cvs.width = width || window.innerWidth
-        cvs.height = height || window.innerHeight
+        cvs.width = cvs.offsetWidth * 2 || window.innerWidth
+        cvs.height = cvs.offsetHeight * 2 || window.innerHeight
 
         if (!cvs.getContext)
             throw new Error('Browser does not support rendering')
@@ -30,6 +22,13 @@ const init = ({ width, height } = {}) => {
             height: cvs.height,
             block: 36,
             tile: 36 / 2
+        }
+        player = {
+            pos: { 
+                x: screen.width / 2, 
+                y: screen.height / 2 
+            },
+            move: []
         }
     }
 
@@ -60,6 +59,7 @@ const init = ({ width, height } = {}) => {
     }
 
     const draw = () => {
+        console.log('draw', player.pos.x, player.pos.y)
         render()
         if (isRunning)
             requestAnimationFrame(draw)
