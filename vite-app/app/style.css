@@ -55,11 +55,11 @@ h1 {
 }
 
 @media (orientation: landscape) {
-    #view { height: 100% }
-    #view.ismobile { height: calc(50% - 3rem) }
+    #view { height: calc(50% - 3rem) }
+    #view.ismobile { height: calc(50% - 6rem) }
 }
 
-#view.full { height: 100% }
+#view.full { height: calc(100% - 7.8rem) }
 
 #game {
     width: 100%;
@@ -71,6 +71,7 @@ h1 {
     border-top: 0.3rem solid #000;
     background: #111;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -85,6 +86,8 @@ h1 {
 #ui.right { flex-direction: row }
 #ui.left { flex-direction: row-reverse }
 
+#ui.collapsed { height: 4.8rem }
+
 .keyboard {
     width: 100%;
     height: 100%;
@@ -92,6 +95,9 @@ h1 {
     grid-template-columns: repeat(7, 1fr);
     gap: 0;
 }
+
+.collapsed .keyboard { display: none }
+.keyboard.collapsed { display: none }
 
 .keyboard button {
     background: #888;
@@ -126,6 +132,9 @@ h1 {
     justify-content: space-between;
     align-items: center;
 }
+
+.collapsed .ui-btns { display: none }
+.ui-btns.collapsed { display: none }
 
 #toggle-ui {
     color: #888;
@@ -219,6 +228,7 @@ h1 {
 }
 
 .collapsed .pad { display: none }
+.pad.collapsed { display: none }
 
 .pad button {
     color: #ddd;

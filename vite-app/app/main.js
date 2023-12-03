@@ -111,12 +111,12 @@ app.toggle.ui.addEventListener('click', () => {
         app.keyboard.classList.remove('collapsed')
         app.toggle.btns.classList.remove('collapsed')
         app.pad.classList.remove('collapsed')
-        app.view.classList.add('full')
+        app.view.classList.remove('full')
     } else {
         app.keyboard.classList.add('collapsed')
         app.toggle.btns.classList.add('collapsed')
         app.pad.classList.add('collapsed')
-        app.view.classList.remove('full')
+        app.view.classList.add('full')
     }
 })
 
