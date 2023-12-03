@@ -1,7 +1,10 @@
 const app = {
     view: document.getElementById('view'),
     game: document.getElementById('game'),
-    ctx: '',
+    settings: {
+        tile: 16,
+        block: 32
+    },
     ui: document.getElementById('ui'),
     keyboard: document.querySelector('keyboard'),
     keys: document.querySelectorAll('.keyboard button'),
@@ -43,6 +46,7 @@ app.browser.isMobile = regex.test((
     navigator.userAgent || navigator.vendor || window.opera
 ).substr(0,4))
 if (app.browser.isMobile) app.state.uiHeight += 3
+if (app.browser.isMobile) app.view.style.height = `calc(50% - ${app.state.uiHeight}rem)`
 
 const storageAvailable = type => {
     let storage
@@ -63,10 +67,28 @@ app.browser.isStorageEnabled = storageAvailable('localStorage')
 if (app.browser.isStorageEnabled)
     app.browser.storage = window.localStorage
 
+app.toggle.ui.addEventListener('click', () => {
+    app.state.isUI = !app.state.isUI
+})
+
+app.toggle.keyboard.addEventListener('click', () => {
+    app.state.isKeybrd = !app.state.isKeybrd
+})
+
+app.toggle.controls.addEventListener('click', () => {
+    app.state.isCtrl = !app.state.isCtrl
+})
+
 const load = () => {
     app.game.width = app.game.offsetWidth
     app.game.height = app.game.offsetHeight
-    app.ctx = app.game.getContext('2d')
+    
+    app.settings.ctx = app.game.getContext('2d')
+    app.settings.width = app.game.width
+    app.settings.height = app.game.height
+
+    if (app.settings.ctx)
+        console.log('context set')
 }
 
 const resize = function() {
