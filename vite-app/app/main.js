@@ -1,18 +1,17 @@
-const ui = {
-    bg: {
-        elem: document.getElementById('bg'),
-        ctx: ''
-    },
-    app: {
-        elem: document.getElementById('app'),
-        ctx: ''
-    },
+const app = {
+    view: document.getElementById('view'),
+    game: document.getElementById('game'),
+    ui: document.getElementById('ui'),
+    keyboard: document.querySelector('keyboard'),
+    keys: document.querySelectorAll('.keyboard button'),
     toggle: {
-        elem: document.getElementById('toggle-controls'),
-        state: true
+        ui: document.getElementById('toggle-ui'),
+        keyboard: document.getElementById('keyboard'),
+        controls: document.getElementById('controls'),
+        shift: document.getElementById('shift')
     },
-    ctrl: {
-        elem: document.getElementById('controls'),
+    space: document.getElementById('space'),
+    pad: {
         up: document.getElementById('up'),
         down: document.getElementById('down'),
         left: document.getElementById('left'),
@@ -20,16 +19,15 @@ const ui = {
         menu: document.getElementById('menu'),
         confirm: document.getElementById('confirm'),
         cancel: document.getElementById('cancel')
+    },
+    state: {
+        isUI: true,
+        isKeybrd: true,
+        isCtrl: true,
+        isUppercase: false,
+        isMenu: false
     }
 }
-
-ui.bg.elem.width = ui.bg.elem.offsetWidth
-ui.bg.elem.height = ui.bg.elem.offsetHeight
-ui.bg.ctx = ui.bg.elem.getContext('2d')
-
-ui.app.elem.width = ui.app.elem.offsetWidth
-ui.app.elem.height = ui.app.elem.offsetHeight
-ui.app.ctx = ui.app.elem.getContext('2d')
 
 ui.toggle.elem.addEventListener('click', () => {
     ui.toggle.state = !ui.toggle.state

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quattrocento+Sans:wght@400;700&display=swap" rel="stylesheet">
     <title>Jordan's Game</title>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -14,30 +14,155 @@
         <h1>Jordan's Game</h1>
     </header>
     <section id="view">
-        <canvas id="bg"></canvas>
-        <canvas id="app"></canvas>
+        <canvas id="game"></canvas>
     </section>
-    <section id="prompt" class="right">
-        <div id="text">Here is where the journey begins...</div>
-        <div id="controls">
-            <button id="toggle-controls">
-                <div class="bar"></div>
-                <div class="bar"></div>
+    <section id="ui">
+        <div class="keyboard lower">
+            <button id="a">
+                <span class="lower">a</span>
+                <span class="upper">A</span>
             </button>
-            <div class="pad">
-                <div class="spacer"></div>
-                <button id="up">&#8593;</button>
-                <div class="spacer"></div>
-                <button id="left">&#8592;</button>
-                <div class="spacer d-spacer"></div>
-                <button id="right">&#8594;</button>
-                <div class="spacer"></div>
-                <button id="down">&#8595;</button>
-                <div class="spacer"></div>
-                <button id="menu">&#9776;</button>
-                <button id="confirm">&#10004;</button>
-                <button id="cancel">&#10008;</button>
+            <button id="b">
+                <span class="lower">b</span>
+                <span class="upper">B</span>
+            </button>
+            <button id="c">
+                <span class="lower">c</span>
+                <span class="upper">C</span>
+            </button>
+            <button id="d">
+                <span class="lower">d</span>
+                <span class="upper">D</span>
+            </button>
+            <button id="e">
+                <span class="lower">e</span>
+                <span class="upper">E</span>
+            </button>
+            <button id="f">
+                <span class="lower">f</span>
+                <span class="upper">F</span>
+            </button>
+            <button id="g">
+                <span class="lower">g</span>
+                <span class="upper">G</span>
+            </button>
+            <button id="h">
+                <span class="lower">h</span>
+                <span class="upper">H</span>
+            </button>
+            <button id="i">
+                <span class="lower">i</span>
+                <span class="upper">I</span>
+            </button>
+            <button id="j">
+                <span class="lower">j</span>
+                <span class="upper">J</span>
+            </button>
+            <button id="k">
+                <span class="lower">k</span>
+                <span class="upper">K</span>
+            </button>
+            <button id="l">
+                <span class="lower">l</span>
+                <span class="upper">L</span>
+            </button>
+            <button id="m">
+                <span class="lower">m</span>
+                <span class="upper">M</span>
+            </button>
+            <button id="n">
+                <span class="lower">n</span>
+                <span class="upper">N</span>
+            </button>
+            <button id="o">
+                <span class="lower">o</span>
+                <span class="upper">O</span>
+            </button>
+            <button id="p">
+                <span class="lower">p</span>
+                <span class="upper">P</span>
+            </button>
+            <button id="q">
+                <span class="lower">q</span>
+                <span class="upper">Q</span>
+            </button>
+            <button id="r">
+                <span class="lower">r</span>
+                <span class="upper">R</span>
+            </button>
+            <button id="s">
+                <span class="lower">s</span>
+                <span class="upper">S</span>
+            </button>
+            <button id="t">
+                <span class="lower">t</span>
+                <span class="upper">T</span>
+            </button>
+            <button id="u">
+                <span class="lower">u</span>
+                <span class="upper">U</span>
+            </button>
+            <button id="v">
+                <span class="lower">v</span>
+                <span class="upper">V</span>
+            </button>
+            <button id="w">
+                <span class="lower">w</span>
+                <span class="upper">W</span>
+            </button>
+            <button id="x">
+                <span class="lower">x</span>
+                <span class="upper">X</span>
+            </button>
+            <button id="y">
+                <span class="lower">y</span>
+                <span class="upper">Y</span>
+            </button>
+            <button id="z">
+                <span class="lower">z</span>
+                <span class="upper">Z</span>
+            </button>
+        </div>
+        <div class="toggles">
+            <button id="toggle-ui">UI</button>
+            <div class="ui-btns">
+                <button id="keyboard">
+                    <div class="grid">
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                    </div>
+                </button>
+                <button id="controls">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+                <button id="shift" class="lower">
+                    <span class="lower">abc</span>
+                    <span class="upper">ABC</span>
+                </button>
+                <button id="space">
+                    <div class="line">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </button>
             </div>
+        </div>
+        <div class="pad">
+            <div class="spacer"></div>
+            <button id="up">&#8593;</button>
+            <div class="spacer"></div>
+            <button id="left">&#8592;</button>
+            <div class="spacer"></div>
+            <button id="right">&#8594;</button>
+            <div class="spacer"></div>
+            <button id="down">&#8595;</button>
+            <div class="spacer"></div>
+            <button id="menu">&#9776;</button>
+            <button id="confirm">&#10004;</button>
+            <button id="cancel">&#10008;</button>
         </div>
     </section>
     <!-------------------------------------------- SCRIPTS -->
