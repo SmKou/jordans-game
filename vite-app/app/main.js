@@ -37,16 +37,18 @@ const app = {
         }
     },
     ui: document.getElementById('ui'),
-    keyboard: document.querySelector('keyboard'),
+    keyboard: document.querySelector('.keyboard'),
     keys: document.querySelectorAll('.keyboard button'),
     toggle: {
         ui: document.getElementById('toggle-ui'),
+        btns: document.querySelector('.ui-btns'),
         keyboard: document.getElementById('keyboard'),
         controls: document.getElementById('controls'),
         shift: document.getElementById('shift')
     },
     space: document.getElementById('space'),
-    pad: {
+    pad: document.querySelector('.pad'),
+    pad_btns: {
         up: document.getElementById('up'),
         down: document.getElementById('down'),
         left: document.getElementById('left'),
@@ -100,14 +102,46 @@ if (app.browser.isStorageEnabled)
 
 app.toggle.ui.addEventListener('click', () => {
     app.state.isUI = !app.state.isUI
+
+    if (app.state.isUI) {
+        app.keyboard.classList.remove('collapsed')
+        app.toggle.btns.classList.remove('collapsed')
+        app.pad.classList.remove('collapsed')
+        app.view.classList.add('full')
+    } else {
+        app.keyboard.classList.add('collapsed')
+        app.toggle.btns.classList.add('collapsed')
+        app.pad.classList.add('collapsed')
+        app.view.classList.remove('full')
+    }
 })
 
 app.toggle.keyboard.addEventListener('click', () => {
     app.state.isKeybrd = !app.state.isKeybrd
 })
 
+app.keys.forEach(key => key.addEventListener('click', e => {}))
 
+app.toggle.shift.addEventListener('click', () => {
+    app.state.isUppercase = !app.state.isUppercase
+})
+
+app.space.addEventListener('click', () => {})
 
 app.toggle.controls.addEventListener('click', () => {
     app.state.isCtrl = !app.state.isCtrl
 })
+
+app.pad_btns.up.addEventListener('click', () => {})
+
+app.pad_btns.down.addEventListener('click', () => {})
+
+app.pad_btns.left.addEventListener('click', () => {})
+
+app.pad_btns.right.addEventListener('click', () => {})
+
+app.pad_btns.menu.addEventListener('click', () => {})
+
+app.pad_btns.confirm.addEventListener('click', () => {})
+
+app.pad_btns.cancel.addEventListener('click', () => {})
