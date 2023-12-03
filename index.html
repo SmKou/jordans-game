@@ -2,29 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
     <title>Jordan's Game</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <section id="splash-screen" class="collapsed"></section>
     <header>
         <h1>Jordan's Game</h1>
-        <div>
-            <button id="pause" title="key: x">&#10073;&#10073;</button>
-        </div>
     </header>
     <section id="view">
+        <canvas id="bg"></canvas>
         <canvas id="app"></canvas>
-        <section id="menu" class="collapsed"></section>
     </section>
     <section id="prompt" class="right">
         <div id="text">Here is where the journey begins...</div>
         <div id="controls">
-            <div class="d-pad">
+            <button id="toggle-controls">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <div class="pad">
                 <div class="spacer"></div>
                 <button id="up">&#8593;</button>
                 <div class="spacer"></div>
@@ -34,16 +34,13 @@
                 <div class="spacer"></div>
                 <button id="down">&#8595;</button>
                 <div class="spacer"></div>
-                
-            </div>
-            <div class="g-btn">
-                <button id="open-menu">&#9776;</button>
+                <button id="menu">&#9776;</button>
                 <button id="confirm">&#10004;</button>
                 <button id="cancel">&#10008;</button>
             </div>
         </div>
     </section>
     <!-------------------------------------------- SCRIPTS -->
-    <script type="module" src="/main.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

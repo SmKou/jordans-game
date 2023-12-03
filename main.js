@@ -1,24 +1,40 @@
-import './style.css'
-import init from './assets/render'
-
-const game = init()
-game.load()
-game.run()
-
-document.addEventListener('pointerdown', e => {
-    const id = e.target.id
-    const text = e.target.textContent
-    
-    switch (id) {
-        case 'up':
-            game.move({ dx: 0, dy: -1 })
-            break
-        default:
-            game.pause()
+const ui = {
+    bg: {
+        elem: document.getElementById('bg'),
+        ctx: ''
+    },
+    app: {
+        elem: document.getElementById('app'),
+        ctx: ''
+    },
+    toggle: {
+        elem: document.getElementById('toggle-controls'),
+        state: true
+    },
+    ctrl: {
+        elem: document.getElementById('controls'),
+        up: document.getElementById('up'),
+        down: document.getElementById('down'),
+        left: document.getElementById('left'),
+        right: document.getElementById('right'),
+        menu: document.getElementById('menu'),
+        confirm: document.getElementById('confirm'),
+        cancel: document.getElementById('cancel')
     }
-})
-document.addEventListener('pointerup', e => console.log(e))
-document.addEventListener('keydown', e => console.log(e))
-document.addEventListener('keyup', e => console.log(e))
+}
 
-window.onresize = () => game.resize()
+ui.bg.elem.width = ui.bg.elem.offsetWidth
+ui.bg.elem.height = ui.bg.elem.offsetHeight
+ui.bg.ctx = ui.bg.elem.getContext('2d')
+
+ui.app.elem.width = ui.app.elem.offsetWidth
+ui.app.elem.height = ui.app.elem.offsetHeight
+ui.app.ctx = ui.app.elem.getContext('2d')
+
+ui.toggle.elem.addEventListener('click', () => {
+    ui.toggle.state = !ui.toggle.state
+    if (ui.toggle.state)
+        ui.ctrl.elem.classList.remove('collapsed')
+    else
+        ui.ctrl.elem.classList.add('collapsed')
+})
