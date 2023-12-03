@@ -156,16 +156,16 @@ document.addEventListener('keydown', e => {
     else
         switch (e.key) {
             case 'ArrowUp' || 'w':
-                app.settings.player.win.y -= 8
+                app.settings.player.win.y -= e.shiftKey ? 16 : 8
                 break
             case 'ArrowDown' || 's':
-                app.settings.player.win.y += 8
+                app.settings.player.win.y += e.shiftKey ? 16 : 8
                 break
             case 'ArrowLeft' || 'a':
-                app.settings.player.win.x -= 8
+                app.settings.player.win.x -= e.shiftKey ? 16 : 8
                 break
             case 'ArrowRight' || 'd':
-                app.settings.player.win.x += 8
+                app.settings.player.win.x += e.shiftKey ? 16 : 8
                 break
         }
 })
