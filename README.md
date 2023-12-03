@@ -39,6 +39,7 @@ for (let i = 1; i < view.width; i += 16)
         complexLattice({ ctx, tile, x: i, y: j })
 ```
 - Test lag with complexity: 32 lines per 16x16 (non-moving)
+- Does not account for varying hardware complexity in executing lines vs shapes
 - Move player
 - Browser: Mobile, LT, Desktop
 
