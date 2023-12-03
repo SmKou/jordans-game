@@ -55,7 +55,8 @@ h1 {
 }
 
 @media (orientation: landscape) {
-    #view { height: calc(50% - 3rem) }
+    #view { height: 100% }
+    #view.ismobile { height: calc(50% - 3rem) }
 }
 
 #game {

@@ -2,8 +2,39 @@ const app = {
     view: document.getElementById('view'),
     game: document.getElementById('game'),
     settings: {
-        tile: 16,
-        block: 32
+        port: {
+            tile: 16,
+            block: 32,
+        },
+        env: {
+            timeofday: 'light_day'
+        },
+        background: {
+            order: [
+                'sunrise',
+                'morning',
+                'dark_day',
+                'light_day',
+                'dark_day',
+                'light_sunset',
+                'dark_sunset',
+                'evening',
+                'night'
+            ],
+            colors: {
+                night: [39,51,89],
+                evening: [60,54,88],
+                light_sunset: [237,95,75],
+                dark_sunset: [102,57,86],
+                sunrise: [253,191,104],
+                morning: [254,216,145],
+                light_day: [255,252,237],
+                dark_day: [255,232,192]
+            }
+        },
+        getBg: function() {
+            return this.background.colors[this.env.timeofday].join(',')
+        }
     },
     ui: document.getElementById('ui'),
     keyboard: document.querySelector('keyboard'),
@@ -46,7 +77,7 @@ app.browser.isMobile = regex.test((
     navigator.userAgent || navigator.vendor || window.opera
 ).substr(0,4))
 if (app.browser.isMobile) app.state.uiHeight += 3
-if (app.browser.isMobile) app.view.style.height = `calc(50% - ${app.state.uiHeight}rem)`
+if (app.browser.isMobile) app.view.setAttribute('class', 'ismobile')
 
 const storageAvailable = type => {
     let storage
@@ -75,27 +106,8 @@ app.toggle.keyboard.addEventListener('click', () => {
     app.state.isKeybrd = !app.state.isKeybrd
 })
 
+
+
 app.toggle.controls.addEventListener('click', () => {
     app.state.isCtrl = !app.state.isCtrl
 })
-
-const load = () => {
-    app.game.width = app.game.offsetWidth
-    app.game.height = app.game.offsetHeight
-    
-    app.settings.ctx = app.game.getContext('2d')
-    app.settings.width = app.game.width
-    app.settings.height = app.game.height
-
-    if (app.settings.ctx)
-        console.log('context set')
-}
-
-const resize = function() {
-    if (!app.browser.timeout)
-        clearTimeout(app.browser.timeout)
-
-    app.browser.timeout = setTimeout(() => load(), 400)
-}
-
-window.onresize = () => resize()

@@ -11,7 +11,8 @@ Pokemon parody game based on a promise and plan
 3. Story-oriented
 
 ## Known Bugs
-_Status_: in-development
+
+- Desktop (landscape): initialize with collapsed ui
 
 ## License
 
