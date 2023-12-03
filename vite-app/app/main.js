@@ -6,6 +6,10 @@ const app = {
             tile: 16,
             block: 32,
         },
+        player: {
+            win: { x: 0, y: 0 },
+            map: { x: 0, y: 0 }
+        },
         env: {
             timeofday: 'light_day'
         },
@@ -145,3 +149,25 @@ app.pad_btns.menu.addEventListener('click', () => {})
 app.pad_btns.confirm.addEventListener('click', () => {})
 
 app.pad_btns.cancel.addEventListener('click', () => {})
+
+document.addEventListener('keydown', e => {
+    if (app.state.isTyping)
+    console.log('typing not implemented')
+    else
+        switch (e.key) {
+            case 'ArrowUp' || 'w':
+                app.settings.player.win.y -= 8
+                break
+            case 'ArrowDown' || 's':
+                app.settings.player.win.y += 8
+                break
+            case 'ArrowLeft' || 'a':
+                app.settings.player.win.x -= 8
+                break
+            case 'ArrowRight' || 'd':
+                app.settings.player.win.x += 8
+                break
+        }
+})
+
+document.addEventListener('keyup', e => {})

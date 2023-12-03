@@ -22,6 +22,13 @@ const complexLattice = ({ ctx, tile, x, y }) => {
     }
 }
 
+const player = ({ ctx, tile, x, y }) => {
+    ctx.fillStyle = '#f00'
+    ctx.fillRect(x, y, tile, tile)
+}
+
+const getPlayer = () => app.settings.player.win
+
 const gesso = view => {
 
     const draw = () => {
@@ -32,12 +39,18 @@ const gesso = view => {
         for (let i = 1; i < view.width; i += 16)
             for (let j = 1; j < view.height; j += 16)
                 complexLattice({ ctx, tile, x: i, y: j })
+
+        const { x, y } = getPlayer()
+        console.log('player', x, y)
+
+        player({ ctx, tile, x, y })
     }
 
     const redraw = () => {
         draw()
+
         if (!app.state.isTyping && !app.state.isMenu)
-            requestAnimationFrame(draw)
+            requestAnimationFrame(redraw)
     }
 
     return redraw

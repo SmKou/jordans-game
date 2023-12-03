@@ -6,6 +6,9 @@ const load = () => {
     app.settings.port.width = app.game.width
     app.settings.port.height = app.game.height
 
+    app.settings.player.win.x = Math.floor(app.settings.port.width / 2)
+    app.settings.player.win.y = Math.floor(app.settings.port.height / 2)
+
     return app.settings.port
 }
 
