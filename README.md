@@ -2,54 +2,42 @@
 
 By: Stella Marie
 
-Pokemon parody game based on a promise and plan
-
 ## Description
 
-1. Geometric shape creatures
-2. Spell-based battle mechanic
-3. Story-oriented
+A survival monster-battling rpg, where a player collects charges and geos, that either opposes or assists trafficking of people, geos and materials.
 
-### Notes
 
-#### Test for Lag
-```js
-const complexLattice = ({ ctx, tile, x, y }) => {
-    const quart = Math.floor(tile / 4)
+**Story**
 
-    ctx.strokeStyle = '#000'
+Gio|Vanya is a sixteen-year-old who heads out to become the Champion. On their way, they collect charges and geos, battling trainers, gym leaders, and 
 
-    for (let i = 0; i < 16; ++i) {
-        const x_i = i % 4 * 4 + x
-        const y_i = Math.floor(i / 4) * 4 + y
-        ctx.beginPath()
-        ctx.moveTo(x_i, y_i)
-        ctx.lineTo(x_i + quart, y_i + quart)
-        ctx.moveTo(x_i + quart, y_i)
-        ctx.lineTo(x_i, y_i + quart)
-        ctx.moveTo(x_i, y_i)
-        ctx.closePath()
-        ctx.stroke()
-    }
-}
+### Geos
 
-// in draw
-for (let i = 1; i < view.width; i += 16)
-    for (let j = 1; j < view.height; j += 16)
-        complexLattice({ ctx, tile, x: i, y: j })
-```
-- Test lag with complexity: 32 lines per 16x16 (non-moving)
-- Does not account for varying hardware complexity in executing lines vs shapes
-- Move player
-- Browser: Mobile, LT, Desktop
+A geo is a creature with a personality determining its traits and preferences, a type determining its physical and magical abilities, and moves it can enact to survive or battle. Every geo has its own preference to either ascribe to dark or light attributes. Dark attributes enable attacks and protection, while light attributes enable defense and healing. 
+
+Appearance:
+- storage
+- battle (front and back)
+- walking
+
+### Inventory
+
+Items:
+- Running shoes
+- Bicycle
+
+Pack
+- Map
+- Food
+- Stones (or charges)
+- Geos
+
 
 ## Known Bugs
-
-- Desktop (landscape): initialize with collapsed ui
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
 [License](./LICENSE)
 
-Copyright © 2023 Sm Kou
+Jordan's Game © 2023 by Stella Marie (Sm Kou)
