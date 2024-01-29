@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Interface</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+        }
+
+        *::-webkit-scrollbar { display: none }
+
+        html { font-size: 62.5% }
+
+        body {
+            position: relative;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3.6rem;
+            color: white;
+            background: black;
+            display: flex;
+            align-items: center;
+        }
+
+        header h2 { 
+            margin: 0;
+            margin-left: 1.6rem;
+            font-family: sans-serif;
+        }
+
+        main {
+            position: absolute;
+            top: 3.6rem;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 3.6rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        section {
+            width: 100%;
+            height: calc(100% - 2.4rem);
+            overflow-y: scroll;
+        }
+
+        input {
+            width: 100%;
+            height: 2.4rem;
+            font-size: 1.6rem; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Test: Player Interactions</h2>
+    </header>
+    <main>
+        <section class="syst"></section>
+        <input class="ipt">
+    </main>
+    <script>
+        const syst = document.querySelector('.syst')
+        const ipt = document.querySelector('.ipt')
+    </script>
+</body>
+</html>
