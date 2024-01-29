@@ -1,0 +1,129 @@
+Pe'um: A person or humanoid.
+
+Geo: A creature that transitions at will between a living totem and its mobile form. They do not require food or drink, and do not reproduce, instead subsisting on and so gathering around memo (m'm). They have battle stats, abilities, and traits. When they communicate, whether another geo, pe'um or fig, they can only pronounce single consonants and vowels. 
+
+b(a)
+b'b
+f(e)        companion or retriever (dog)
+f'f
+g(a)
+g'g
+k(o)
+k'k
+m(o)
+m'm         spirit, charge
+n(e)
+n'n
+p(a)
+p'p
+s(o)
+s's
+t(a)        line or chain
+t't
+v(a)
+v'v
+z(e)
+z'z
+
+r
+l
+
+a
+a'a
+e 
+e'e
+i
+i'i
+o
+o'o
+u
+u'u
+
+Fig: A being made purely of memo, a charged substance akin to spirit or magic. They often serve a function to nature and while they appear to both geos and pe'um, they rarely engage with them beyond their function. They speak the formal language of geos that geos cannot fully pronounce (included in the following).
+
+Afara       Basilisk
+Duso        Grim Reaper (ghost)
+Ezzo        Bomber
+Fali        Chained Men ()
+Gan         Ice Woman
+Mami        Jesterman
+Moffe       Fire Bird
+Sanol(i)    Snow elf(s)
+Zakko       Lightning Bird
+
+afara       western dragon
+bame        bipedal dragon, metamorphosis
+basa        frog
+bazo        bat
+beli(n)     pitcher (plant)
+daro        serpentine dragon
+dekati      winged reptile (pteradactyl)
+digo        mole
+duso        death
+fali        chainlink(s)
+galari      iron
+gama        grime, sludge
+ga(n)       
+garami      carp
+garina      dog
+gase        gas, smoke
+gave        igneous/porous rock
+kabazi      fox
+kafi        mine/explosive
+            smog/haze
+karo        skull
+kebo        snake/cobra
+lobelo      water lily
+mamaro      sheep
+mami        mirror, copycat
+mida        child
+milofi      oarfish
+mina        weasel
+mofe        heron
+naki        salt (crystal)
+nefe(m)     lion
+nitelo      chameleon
+pani        elephant
+paripa      horse
+pita        mouse
+pito        fighter
+            wrestler
+- li        kickboxer
+- ne        boxer
+- ta        (capoeira)
+rado        crystal
+rago        snow, snowflake
+rakku       tiger-dog
+rona        lizard
+sano(l)     wool
+            skins      
+sanom       moth
+saru        starfish
+sez         leopard
+siri        turtle
+so(l)       
+soni        sediment(ary) rock
+suneta      doll
+ta(n)       vine
+tari        chicken
+tarubo      trash(bag)
+tezako      squid
+va(l)       
+velo        battery
+            fruit
+veno        gnat
+vodela      rafflesia
+zako        
+
+fu          fire
+gu          dragon
+ku          electric
+mu          ground
+nu          ghost
+pu          force
+su          grass
+s(k)u       rock
+s(n)u       poison
+t(k)u       ice          
+vu          psychic
+zu          water

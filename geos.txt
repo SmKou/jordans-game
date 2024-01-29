@@ -1,0 +1,219 @@
+Dragon [-g]
+- Afarag
+    Axew -> Frazure -> Haxorus
+    Theropod | Western dragon
+- Bameg
+    Bagon -> Shelgon -> Salamence
+    Butterfly metamorphosis | Pachycephalosaurus
+- Darog
+    Dratini -> Dragonair -> Dragonite
+    Sea serpent | Yeouiju (jewel => korean dragon)
+
+Electric [-k]
+- Mamarok
+    Mareep -> Flaafy -> Ampharos
+    Sheep
+- Pitak
+    Pichu -> Pikachu -> Raichu
+    Mouse | Rat king (German)
+- Velok
+    Voltorb -> Electrode
+    Battery | Gashapon toy | Apricorn (Pokemon)
+
+- Rakkuvu
+    Raikou [legendary]
+    Tiger-dog | Raijuu (Japanese)
+- Zakkopu
+    Zapdos [legendary]
+    Piasa (Thunderbird: American)
+
+Fire [-f]
+- Garinaf
+    Growlithe -> Arcanine
+    Dog | Axehandle hound (American)
+- Paripaf
+    Ponyta -> Rapidash
+    Horse | Buraq (Islam / Persian)
+- Tarif
+    Charmander -> Charmeleon -> Charizard
+    Lizard
+- Torzif
+    Torchic -> Combusken -> Blaziken
+    Chicken | Basan (Japanese)
+
+- Moffenu
+    Moltres [legendary]
+    Phoenix | Bennu | Huma/Slavic firebird | Vermillion bird/Suzaku | Heron
+- Neffemtu
+    Entei [legendary]
+    Shishi (Lion-dog: Chinese)
+
+Force [-p]
+- Falip
+    Falinks
+    Tiny warriors
+- Minap
+    Mienfoo -> Mienshao
+    Mustelid (weasel)
+
+Ghost [-n]
+- Duson
+    Duskull -> Dusclops -> Dusknoir
+    Grim Reaper
+- Karo'an
+    Cubone -> Marowak
+    Ammit (Ancient egyptian)
+- Midan
+    Misdreavus -> Mismagius
+    The Ring (movie)
+- Sunetan
+    Shuppet -> Banette
+    Doll
+
+Grass [-s]
+- Basas
+    Bulbasaur -> Ivysaur -> Venusaur
+    Rafflesia frog
+- Belins
+    Bellsprout -> Weepinbell -> Victreebel
+    Pitcher plant
+- Lobelos
+    Lotad -> Lombre -> Ludicolo
+    Water lily
+- Tans
+    Tangela -> Tangrowth
+    Vines
+- Vodelas
+    Oddish -> Gloom -> Vileplume
+    Rafflesia
+
+Ground [-m]
+- Basolam
+    Absol
+    Bai ze (Chinese) | Barghest
+- Digom
+    Diglett -> Dugtrio
+    Mole
+- Panim
+    Phanpy -> Donphan
+    Elephant
+
+Ground-Rock [-(s)km]
+- Gaveskm
+    Geodude -> Graveler -> Golem
+    Igneous rock
+- Radom
+    Rhyhorn -> Rhydon
+    Crystal
+- Sonikm
+    Onix -> Steelix
+    Sedimentary rock
+
+Ice [-t(k)]
+- Gantk
+    Jynx
+    Ganguro (Japanese trend) | Yuki-onna (Japanese)
+- Ragot(k)
+    Cryogonal
+    Snowflake
+- Sanolitk
+    Snorunt -> Glalie
+    Yukinko (Japanese)
+- Sanom-otk
+    Snom -> Frosmoth
+    Jewel caterpillar | Arctic moth
+
+- Ratkizu
+    Articuno [legendary]
+    Roc | Simurgh | Quetzal | Magpie-jay
+
+Poison [-sn]
+- Bazosn
+    Zubat -> Golbat
+    Bat
+- Gasen
+    Gastly -> Haunter -> Gengar
+    Gas / Air pollution
+- Gamasn
+    Grimer -> Muk
+    Sludge
+- Kafisn
+    Koffing -> Weezing
+    Naval mine | Smog
+- Kebosn
+    Ekans -> Arbok
+    Snake-cobra
+- Tarubosn
+    Trubbish -> Garbodor
+    Trashbag
+- Tezakosn
+    Tentacool -> Tentacruel
+    Squid
+- Venosn
+    Venonat -> Venomoth
+    Gnat-moth
+
+Psychic [-v]
+- Kabaziv
+    Abra -> Kadabra -> Alakazam
+    Fox | Edgar Cayce -> Uri Geller -> Harry Houdini
+- Mamiv
+    Mime Jr -> Mr. Mime
+    Mime
+
+Rock [-sk]
+- Dekatisk
+    Aerodactyl
+    Pteradactyl
+- Galarisk
+    Aron -> Lairon -> Aggron
+    Bulgasari (Korean) | Triceratops | Theropod
+- Nakisk
+    Nacli -> Naclstack -> Garganacl
+    Salt crystal rock
+
+Water [-z]
+- Garamiz
+    Magikarp -> Gyarados
+    Carp -> East dragon
+- Milofiz
+    Feebas -> Milotic
+    Oarfish
+- Niteloz
+    Sobble -> Drizzile -> Inteleon
+    Chameleon
+- Saruz
+    Staryu -> Starmie
+    Starfish
+- Siriz
+    Squirtle -> Wartortle -> Blastoise
+    Turtle
+
+- So'ezzu
+    Suicune [legendary]
+    Leopard-dog | Kirin
+
+---------- exceptions
+
+- Dorsn (fem.) | Dosnr (mas.)
+    Nidoran -> Nidorina -> Nidoqueen | Nidoran -> Nidorino -> Nidoking
+    Rabbit | Al-mir'raj
+
+- Me'opt
+    Meowth -> Persian
+    Maneki-neko (Japanese) | Siamese cat -> mountain cat
+
+- Muv -> Mutuv
+    Mew -> Mewtwo
+    House cat
+
+- Pito
+    Tyrogue
+    Martial arts fighter
+    -lip -> Hitmonlee
+    -nep -> Hitmonchan
+    -tap -> Hitmontop
+
+- Valtkif [fire] | Valfit [ice]
+    Vulpix -> Ninetales
+    Nine-tailed fox
