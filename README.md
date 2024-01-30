@@ -6,6 +6,7 @@ Pokemon parody rpg made with Godot 4
 
 ## Description
 
+When 
 
 **Inspired by:** Pokemon Red
 **Spec by:** Jordan (my nephew)
