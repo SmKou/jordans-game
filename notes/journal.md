@@ -1,7 +1,68 @@
 # Journal
 
+[2024 Feb. 1](#2024-2-1)
 [2024 Jan. 31](#2024-1-31)
 [2024 Jan. 30](#2024-1-30)
+
+## 2024-2-1
+
+Geo bonding
+
+Geo
+: standard, shiny, or sweet
+: dark or light
+: regular or legendary
+
+Every geo has 5 moves they will know by their final evolution, which differ based on their preference of light or dark.
+1. 3 moves
+2. +1
+3. +1
+Standard: stronger (more damage)
+Shiny: faster (higher speed and evasion, bonus on related defense and attack)
+Sweet: more effective (heal more, recover faster, higher tolerance, overcome type disadvantages)
+
+When does a geo evolve and what is the advantage between evolving earlier or later?
+- cause:
+  - team support: evolves to support team and battles
+  - temple stone: forces evolution
+- evolve when possible: gain move advantage based on level
+  evolve later: gain variant advantage equal to levels skipped
+
+Wild Geo battle (actions)
+- train
+- use item
+- attack
+- appeal
+- capture
+- run
+
+Pe'um or Fig battle (actions)
+- command
+- attack
+- use item
+- surrender
+
+Defense styles
+- disable
+- guard
+- heal
+- evade
+- distract or disturb
+- deflect
+
+Attack styles
+- impact
+- quantity
+- speed
+- stealth
+
+What can a geo do regarding their trainer?
+- run
+- follow
+- lead
+- support
+- ignore
+- speak
 
 ## 2024-1-31
 
