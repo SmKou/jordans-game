@@ -1,19 +1,6 @@
-class geo {
-    constructor(geo) {
-        this.peum = {}
-        this.geo = {}
-        this.fig = {}
-        this.origin = geo
-    }
+class geo {}
 
-    do() {}
-
-    attack(target) {}
-    defend(attack) {}
-
-}
-
-const moves = { }
+const moves = {}
 
 const geos = {
     'a.f.r': { name: "Afarag", type: 'g', base: 'western dragon',
