@@ -7,6 +7,11 @@
 ## 2024-2-1
 
 Geo bonding
+- What causes a geo to like or obey a trainer?
+
+At the end of an encounter, if a geo decides to appeal to the player, they will follow the player around. The player can have up to two geos following them at a time. The two can either be the player's own geo or an appealing geo. If a player does not claim a geo trying to appeal to them, the geo will either stop following them once they reach the next town or after the player's next battle, whichever is first.
+
+If a geo is trying to appeal to a player when they enter another battle with a wild geo, the following geo will participate as part of the player's team and the player will have until the end of the battle to claim them. Note that if a geo is trying to appeal to a player, they will follow a player's command.
 
 Geo
 : standard, shiny, or sweet
