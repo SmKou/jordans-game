@@ -33,3 +33,7 @@
     Buy (item)
     Sell (item)
 */
+
+const eat = (food = '') => {
+    if (!food || food.type !== 'food') return;
+}
