@@ -34,6 +34,18 @@
     Sell (item)
 */
 
+class Creature {
+    constructor() {
+        
+    }
+
+
+}
+
+class Geo extends Creature {}
+class Fig extends Creature {}
+class Peum extends Creature {}
+
 const eat = (food = '') => {
     if (!food || food.type !== 'food') return;
 }
