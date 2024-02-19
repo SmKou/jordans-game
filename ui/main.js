@@ -11,7 +11,4 @@ const addLine = (text, isPlayer = false, isSpoken = false) => {
 ipt.addEventListener('change', e => {
     const val = e.target.value
     e.target.value = ''
-
-    addLine(val, true)
-    addLine("I hear you.", false, true)
 })
