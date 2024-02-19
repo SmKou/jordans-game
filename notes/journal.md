@@ -1,8 +1,76 @@
 # Journal
 
+[2024 Feb. 3](#2024-2-3)
 [2024 Feb. 1](#2024-2-1)
 [2024 Jan. 31](#2024-1-31)
 [2024 Jan. 30](#2024-1-30)
+
+## 2024-2-3
+
+Father:
+Are they a boy or a girl?
+[Set player gender]
+
+Mother:
+A ___, dear.
+
+Father:
+What do we name them?
+[Set player name][Default: Luther | Cassia]
+
+Mother:
+___ is a good name, I think.
+
+Father:
+Hm? What is it?
+
+Mother:
+Nothing, dear. ___ will do.
+
+Father:
+Did you hear about Skellington's kid? I bet our children will get along. Were they a boy or a girl?
+[Set friend gender]
+
+Mother:
+A ___, dear.
+
+Father:
+What was their name?
+
+Mother:
+Jackie, Jackie Skellington.
+
+Father:
+Lamp also had a kid. May be a nuisance in the future. Were they a boy or a girl?
+[Set rival gender]
+
+Mother:
+A ___, dear.
+
+Father:
+What was their name?
+
+Mother:
+Genie.
+
+Leech: Luc! Luc! We have an emergency at the lab!
+
+Father: 
+Bruthilda.
+
+Mother:
+I'm fine, dear. Go. Nice to see you, Leech!
+
+Leech: Nice to see you. Hurry up, Luc!
+
+Transition: Darkness -> Bedroom
+Player wakes up to find their me'opt calling at them.
+
+### Notes
+
+Forgot to add ditto.
+
+Every geo has three evolutions, except for legendaries and 
 
 ## 2024-2-1
 
@@ -88,6 +156,9 @@ Undertown
     - Me'opt
         Meowth -> Persian
         Maneki-neko (Japanese) | Siamese cat -> mountain cat
+    - Matodipt
+        Ditto
+        Putty
 
 Dragon [-g] city => B'kunawbida
 - Based on: Bakunawa (Filipino) | Bida (West African: Soninke)
@@ -334,7 +405,7 @@ Psychic [-v] city => Onisand
     - Kabaziv
         Abra -> Kadabra -> Alakazam
         Fox | Edgar Cayce -> Uri Geller -> Harry Houdini
-    - Mamiv
+    - Mamitov
         Mime Jr -> Mr. Mime
         Mime
 
@@ -428,8 +499,10 @@ m'd     [mida]      child
 m'f     [mofe]      heron
 m'f'f   [moffe]     Firethrower
 m'l'f   [milofi]    oarfish
+m'm't   [mamito]    Jesterman, mirror, copycat
 m'm'r   [mamaro]    sheep
 m'n     [mina]      weasel
+m't     [mato]      shapeshifter
 n       [ne]        ghost;
 n'n
 n'f(m)  [nefe(m)]   lion

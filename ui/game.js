@@ -33,3 +33,7 @@
     Buy (item)
     Sell (item)
 */
+
+const geos_index = {
+    
+}
