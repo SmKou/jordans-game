@@ -1,9 +1,180 @@
 # Journal
 
-[2024 Feb. 3](#2024-2-3)
-[2024 Feb. 1](#2024-2-1)
-[2024 Jan. 31](#2024-1-31)
-[2024 Jan. 30](#2024-1-30)
+[2024 Feb. 26](#2024-2-26)
+[2024 Feb. 25](#2024-2-25) - Opening and transition
+[2024 Feb. 3](#2024-2-3) - Opening dialog
+[2024 Feb. 1](#2024-2-1) - Geo bonding, traits, and battle
+[2024 Jan. 31](#2024-1-31) - Index of cities and geos per route, lexicon for geo-fig language, character stats and traits, and notes on actions
+[2024 Jan. 30](#2024-1-30) - Consideration of research, geo therapist, and mode preference
+
+## 2024-2-26
+
+```js
+/*  What are characters capable of?
+
+    Speak
+    - Statement
+    - Answer
+    - Follow
+    - Lead
+    - Bump
+    Walk or run
+    Swim
+    [Dive]
+    Ride
+    Fly
+    Fish
+    Cut or break
+    Activate item
+    - Use
+    - Give
+    - Open or close
+    Appeal (geo)
+    Capture (geo)
+    Release (geo)
+    Battle | Train
+
+    Eat or charge
+    Sleep (dream or save game)
+
+    Attack (use move)
+    Defend (react to move)
+
+    Give (charge)
+    Craft (art | item)
+    [Cook Clean Laundry...]
+    Read
+    Buy (item)
+    Sell (item)
+*/
+```
+
+
+## 2024-2-25
+
+**Opening**
+Father:     Are they a boy or a girl?
+            INPUT: protagonist_gender
+Mother:     A [protagonist_gender], dear.
+Father:     What would you like to name them?
+Mother:     [protagonist_gender ? 'Luther' : 'Cassia']
+            is a good name, I believe.
+Father:     What is it?
+Mother:     Nothing, love. 
+            [protagonist_gender ? 'Luther' : 'Cassia']
+            will do.
+Father:     Did you hear about Skellington's kid?
+            I bet our children will get along.
+            Were they a boy or girl?
+            INPUT: deuteragonist_gender
+Mother:     A [deuteragonist_gender], dear.
+Father:     What was their name?
+Mother:     Jackie. Jackie Skellington.
+Father:     du Lamp also had a kid.
+            May be a nuisance in the future.
+            Just like their parents.
+            Were they a boy or a girl?
+            INPUT: antagonist_gender
+Mother:     A [antagonist_gender], dear.
+Father:     What was their name?
+Mother:     You want to know?
+Father:     Not really.
+Mother:     Genie. Genie du Lamp.
+Leech:      Luc! Luc! Emergency at the lab!
+Father:     Speaking of nuisance.
+Leech:      Congratulations on the baby!
+Father:     Bruthilda.
+Mother:     I'll be fine, dear. Go.
+            Nice to see you, Prof. Leech.
+Leech:      Ah thanks. Nice to see you--Bye!
+
+*Transition**
+Dream:      Many things change, not only time.
+            What a funny thing to find acceptance, it's worth looking for it.
+            So. Are you still a [protagonist_gender]?
+            INPUT: yes | no: protagonist_second_gender
+Dream:      What about your name?
+            INPUT: <Luther> | <Cassia> | protagonist_second_name
+Dream:      Don't expect things not to change.
+            And not all things have answers.
+            Here is a question with an answer though.
+            Is this part of the story?
+            My conversation with you, is this part of the story?
+            INPUT: yes | no
+Dream:      [
+                yes:
+                Technically, you are wrong and retrospectively, you could be right.
+                I appreciate your consideration, thank you, and hope you will remember me.
+
+                no:
+                Technically, you are right and retrospectively, you could be wrong. Perhaps time will persuade you to remember me. If not, it's alright.
+            ]
+            I am the Dream and I welcome you to Jordan's Game.
+
+_alternative_: player wakes up to gasen and me'opt chattering at them
+
+_option 1_
+            Oh. Do you hear them?
+_description: chatter of geos_
+???:
+???:
+Dream:      The geos your parents gave you,
+            they are calling you.
+            VIEW: Gasen and Me'opt
+            SELECT Gasen
+Dream:      This is a gasen.
+            They were given to you by your mom.
+            What did you name them?
+            INPUT: gasen_name
+            SELECT Me'opt
+Dream:      This is a me'opt.
+            They were given to you by your dad.
+            What did you name them?
+            INPUT: meopt_name
+Dream:      Now. Wake up.
+
+_option 2_
+Player wakes up and addresses them as gasen and me'opt.
+Prompt: Gasen's name
+Prompt: Me'opt's name
+_or_ player can change geo names whenever they want
+_or_ mom asks player why they're not calling gasen and me'opt by name
+
+```js
+const player = {
+    first_gender: '',
+    second_gender: '',
+    first_name: '',
+    second_name: ''
+}
+
+const friend = {
+    gender: '',
+    name: '',
+    surname: 'Skellington'
+}
+
+const rival = {
+    gender: '',
+    name: '',
+    surname: 'du Lamp'
+}
+
+const set_name = (peum, name) => {
+    const name_setting = peum.isPlayer ?
+        peum.first_name ? 'second_name' : 'first_name'
+        : 'name'
+    peum[name_setting] = name
+}
+
+const set_gender = (peum, gender) => {
+    const gender_setting = peum.isPlayer ?
+        peum.first_gender ? 'second_gender' : 'first_gender'
+        : 'gender'
+    peum[gender_setting] = gender
+}
+```
+**Note**: This script is only used in the beginning of the game.
 
 ## 2024-2-3
 

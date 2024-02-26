@@ -19,7 +19,9 @@ Package Scanner
 Cashier
 */
 
-class Peum {}
+class Peum {
+    constructor() {}
+}
 
 const mom = {
     name: 'Bruthilda',
