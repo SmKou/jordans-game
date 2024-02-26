@@ -8,7 +8,11 @@ const addLine = (text, isPlayer = false, isSpoken = false) => {
     syst.append(p)
 }
 
-ipt.addEventListener('change', e => {
-    const val = e.target.value
-    e.target.value = ''
+ipt.field.addEventListenr('keydown', e => {
+    switch (e.key) {
+        case 'ArrowUp':
+        case 'ArrowDown':
+        case 'ArrowLeft':
+        case 'ArrowRight':
+    }
 })
