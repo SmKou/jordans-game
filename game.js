@@ -1,38 +1,4 @@
-/*  What are characters capable of?
 
-    Speak
-    - Statement
-    - Answer
-    - Follow
-    - Lead
-    - Bump
-    Walk or run
-    Swim
-    Dive
-    Ride
-    Fly
-    Fish
-    Cut or break
-    Activate item
-    - Use
-    - Give
-    - Open or close
-    Appeal (geo)
-    Capture (geo)
-    Release (geo)
-    Battle or training
-
-    Eat or charge
-    Sleep (dream or save game)
-
-    Attack (use move)
-    Defend (react to move)
-
-    Give (charge)
-    Make (art | item)
-    Buy (item)
-    Sell (item)
-*/
 
 function init() {
     const global = {
@@ -124,6 +90,18 @@ const state = {
     objs: []
 }
 
+/*  Inventory (bag)
+    Contains map, geos, items, food
+*/
+class Inventory {
+    constructor() {
+        this.map = ''
+        this.geos = {}
+        this.items = {}
+        this.food = {}
+    }
+}
+
 class Character {
     constructor(name, home_addr, relation = '') {
         this.name = name
@@ -134,6 +112,9 @@ class Character {
         this.pos = { x: 0, y: 0 }
         this.face = { x: 1, y: 0 }
         this.anim = false
+        this.companion = new Array(2)
+        
+        this.inventory = new Inventory()
     }
 
     move(env_type, dir, run = false) {
@@ -188,4 +169,26 @@ class Character {
                 break
         }
     }
+}
+
+/*  Building
+    Addr: classifier
+    Status: un|locked
+    Contains rooms
+*/
+class Building {
+    constructor(addr, locked) {
+        this.addr = addr
+        this.status = locked
+        this.rooms = {}
+    }
+}
+
+/*  Room
+    Status: un|locked
+    Contains items and furniture
+    Permissions
+*/
+class Room {
+    constructor() {}
 }

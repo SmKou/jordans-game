@@ -1,1 +1,7 @@
-/* Opt */
+/* 
+Opt 
+*/
+
+class Fig {
+    constructor() {}
+}
