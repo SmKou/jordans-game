@@ -1,5 +1,3 @@
-
-
 function init() {
     const global = {
         time: {
@@ -33,62 +31,138 @@ function init() {
     }
 }
 
-
-
-const map = [
-    [ 
-        { terrain: 'water' }, // 0,0
-        { terrain: 'water' }, // 0,1
-        { terrain: 'grass' }, // 0,2
-        { terrain: 'grass' }, // 0,3
-        { terrain: 'grass' }, // 0,4
-    ],
-    [
-        { terrain: 'water' },
-        { terrain: 'water' },
-        { terrain: 'dirt' },
-        { terrain: 'dirt' },
-        { terrain: 'dirt' },
-    ],
-    [
-        { terrain: 'town' },
-        { terrain: 'town' },
-        { terrain: 'bldg' },
-        { terrain: 'bldg' },
-        { terrain: 'bldg' },
-    ],
-    [
-        { terrain: 'town' },
-        { terrain: 'town' },
-        { terrain: 'bldg' },
-        { terrain: 'bldg' },
-        { terrain: 'bldg' },
-    ],
-    [
-        { terrain: 'town' },
-        { terrain: 'town' },
-        { terrain: 'bldg' },
-        { terrain: 'bldg' },
-        { terrain: 'bldg' },
-    ]
-]
-
-const bldg = {
-    corner: { x: 2, y: 5 }, // bottom left
-    length: 3,
-    width: 3,
-    door: {
-        pos: { x: 3, y: 3 },
-        dir: { x: 0, y: 1 }
+class Terrain {
+    constructor(objects = []) {
+        this.objects = objects
     }
 }
 
-const state = {
-    speed: 16,
-    step: 1,
-    curr: { x: 2, y: 0 },
-    objs: []
+class Water extends Terrain {
+    static type = 'water'
+    static move = 'swim'
+
+    constructor(deep_water = false) {
+        super()
+        this.depth = deep_water
+    }
 }
+
+class Dirt extends Terrain {
+    static type = 'dirt'
+    static move = 'walk'
+
+    constructor() {
+        super()
+    }
+}
+
+class Grass extends Terrain {
+    static type = 'grass'
+    static move = 'walk'
+
+    constructor(tall_grass = false) {
+        super()
+        this.height = tall_grass
+    }
+}
+
+class Pavement extends Terrain {
+    static type = 'pavement'
+    static move = 'walk'
+
+    constructor() {
+        super()
+    }
+}
+
+/* Town or Route */
+class Segment {
+    static type = 'town'
+    static type = 'walk'
+
+    constructor(name) {
+        super()
+        this.name = name
+        this.map = []
+        this.buildings = []
+        this.npc = {
+            peum: {},
+            fig: {}
+        }
+    }
+}
+
+/*  Building
+    Addr: classifier
+    Status: un|locked
+    Contains rooms
+*/
+class Building {
+    constructor(bottomLeftCorner, width, length, door) {
+        this.pos = {
+            x: bottomLeftCorner.x,
+            y: bottomLeftCorner.y
+        }
+        this.dim = {
+            w: width,
+            l: length
+        }
+        this.door = door
+    }
+}
+
+/*  Room
+    Status: un|locked
+    Contains items and furniture
+    Permissions
+*/
+class Room {
+    constructor() {}
+}
+
+class Door {
+    constructor(status, offset) {
+        this.status = status
+        // true: unlocked, false: locked
+        this.offset = offset
+    }
+}
+
+const Town = new Segment()
+Town.buildings = [
+    new Building({ x: 2, y: 3}, 3, 3, new Door(false, 1))
+]
+Town.map = [
+    [
+        new Grass(true),
+        new Grass(true),
+        new Grass(),
+        new Water(),
+        new Water(true)
+    ],
+    [
+        new Grass(true),
+        new Grass(),
+        new Grass(),
+        new Water(),
+        new Water()
+    ],
+    [
+        Town.buildings[0],
+        new Dirt(),
+        new Dirt()
+    ],
+    [
+        Town.buildings[0],
+        new Pavement(),
+        new Pavement()
+    ],
+    [
+        Town.buildings[0],
+        new Pavement(),
+        new Pavement()
+    ]
+]
 
 /*  Inventory (bag)
     Contains map, geos, items, food
@@ -171,24 +245,3 @@ class Character {
     }
 }
 
-/*  Building
-    Addr: classifier
-    Status: un|locked
-    Contains rooms
-*/
-class Building {
-    constructor(addr, locked) {
-        this.addr = addr
-        this.status = locked
-        this.rooms = {}
-    }
-}
-
-/*  Room
-    Status: un|locked
-    Contains items and furniture
-    Permissions
-*/
-class Room {
-    constructor() {}
-}
