@@ -19,10 +19,6 @@ class Geo {
         this.loyalty = 0
         this.trust = 0
     }
-
-    battle(command = false) {
-        const rl = Math.floor(Math.random() * 100) - 50
-    }
 }
 
 class Legendary extends Geo {
