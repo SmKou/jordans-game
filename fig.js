@@ -1,7 +1,0 @@
-/* 
-Opt 
-*/
-
-class Fig {
-    constructor() {}
-}
