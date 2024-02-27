@@ -96,50 +96,17 @@ class Door {
     }
 }
 
-const Town = new Segment()
-Town.buildings = [
-    new Building({ x: 2, y: 3}, 3, 3, new Door(false, 1))
-]
-Town.map = [
-    [
-        new Grass(true),
-        new Grass(true),
-        new Grass(),
-        new Water(),
-        new Water(true)
-    ],
-    [
-        new Grass(true),
-        new Grass(),
-        new Grass(),
-        new Water(),
-        new Water()
-    ],
-    [
-        Town.buildings[0],
-        new Dirt(),
-        new Dirt()
-    ],
-    [
-        Town.buildings[0],
-        new Pavement(),
-        new Pavement()
-    ],
-    [
-        Town.buildings[0],
-        new Pavement(),
-        new Pavement()
-    ]
-]
-
 /* ------------------------------------------------- CHARACTER */
 
 class Character {
-    constructor(name, creature, age, level) {
+    constructor(name, creature, age, level, pos, dir = { x: 0, y: -1 }) {
         this.name = name
+        this.id = name.toLowerCase()
         this.creature = creature
         this.age = age
         this.level = level
+        this.pos = pos
+        this.dir = dir
 
         this.hp = 100
         this.energy = 100
@@ -150,9 +117,80 @@ class Character {
         this.defense = 0
         this.speed = 0
         this.evasion = 0
+
+        this.rider = false
+        this.mount = false
     }
 
-    
+    direction(dir, origin = false) {
+        if (origin) {
+        }
+        else {
+            if (dir.x === -1)
+                return 'left'
+            else if (dir.x === 1)
+                return 'right'
+
+            if (dir.y === -1)
+                return 'up'
+            else if (dir.y === 1)
+                return 'down'
+        }
+    }
+
+    turn(dir) {
+        const d = direction(dir, this.dir)
+        this.dir = dir
+        return this.print('turned', d)
+    }
+
+    print(action, target) {
+        return `${this.name} ${action} ${target}`
+    }
+
+    walk(dir) {
+        if (this.dir !== dir)
+            return this.turn(dir)
+        this.pos.x += dir.x
+        this.pos.y += dir.y
+        if (this.rider)
+            this.stamina -= 2
+        else
+            this.stamina -= 1
+        return this.print('walked', direction(dir))
+    }
+
+    run(dir) {
+        if (this.dir !== dir)
+            return this.turn(dir)
+        this.pos.x += dir.x * 2
+        this.pox.y += dir.y * 2
+        if (this.rider)
+            this.stamina -= 3
+        else
+            this.stamina -= 2
+        return this.print('ran', direction(dir))
+    }
+
+    swim(dir) {
+        if (this.dir !== dir)
+            return this.turn(dir)
+        this.pos.x += dir.x
+        this.pos.y += dir.y
+        if (this.rider)
+            this.stamina -= 3
+        else
+            this.stamina -= 2
+        return this.print('swam', direction(dir))
+    }
+
+    ride(dir, run) {
+        if (!this.mount) return;
+        if (run)
+            return this.mount.run(dir)
+        else
+            return this.mount.walk(dir)
+    }
 }
 
 class Inventory {
@@ -200,7 +238,11 @@ class Peum {
     constructor() {}
 }
 
-class Player extends Peum {}
+class Player extends Peum {
+    constructor(pos) {
+        this.pos = pos
+    }
+}
 
 /*
 Me'opt
@@ -228,6 +270,55 @@ Opt
 class Fig {
     constructor() {}
 }
+
+/* -------------------------------------------- WORLD_MANAGER */
+
+class Game {
+    static speed = 1
+    // Godot: speed of movement, move (change map location)
+
+    constructor() {
+        this.player = new Player({ x: 0, y: 0 })
+    }
+}
+
+const Town = new Segment()
+Town.buildings = [
+    new Building({ x: 2, y: 3}, 3, 3, new Door(false, 1))
+]
+Town.map = [
+    [
+        new Grass(true),
+        new Grass(true),
+        new Grass(),
+        new Water(),
+        new Water(true)
+    ],
+    [
+        new Grass(true),
+        new Grass(),
+        new Grass(),
+        new Water(),
+        new Water()
+    ],
+    [
+        Town.buildings[0],
+        new Dirt(),
+        new Dirt()
+    ],
+    [
+        Town.buildings[0],
+        new Pavement(),
+        new Pavement()
+    ],
+    [
+        Town.buildings[0],
+        new Pavement(),
+        new Pavement()
+    ]
+]
+
+Town.buildings[0]
 
 /* ------------------------------------------------ UI | Text */
 
