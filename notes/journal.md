@@ -7,7 +7,161 @@
 [2024 Jan. 31](#2024-1-31) - Index of cities and geos per route, lexicon for geo-fig language, character stats and traits, and notes on actions
 [2024 Jan. 30](#2024-1-30) - Consideration of research, geo therapist, and mode preference
 
+## 2024-2-27
+
+**move**
+walk in tall grass
+fish in water
+= encounter
+
+dig in cave
+
+**move into object:**
+
+door
+- locked: "Door is locked."
+  - A: knock
+  - B: unlock (use active geo)
+- unlocked
+  - [move]: enter
+  - A: knock
+  - B: "The door is already unlocked."
+
+
+chair
+- available: sit
+- unavailable: "Seat is taken."
+
+tree
+- A: shake
+  - [drop]: "[name] got [item(s)]."
+  - none: "The tree is empty."
+- B: cut (use active geo)
+
+rock
+- A: push
+  - weight < attack: [move]
+  - weight > attack: "Rock is too heavy to move."
+- B: break (use active geo)
+
+**activate (press A)**
+peum
+- question
+- interact
+
+appeal
+capture
+release
+
+**battle**
+- attack
+- command
+
+**craft | chore-work**
+eg. Packing packages
+
+### Inventory
+Every peum has a gameboy device
+- contacts
+- map
+- geo-fig index
+
+Bag
+- gameboy device
+- geos
+- items
+- food
+
+    Side pockets
+    - wand
+    - charges
+
+### Game Menu
+- keymappings
+- sound and volume
+- save game
+  and dream
+
+  WASD | ArrowUp ArrowLeft ArrowDown ArrowRight
+  = player movement
+  JK | DS
+  = A: confirm (default action), B: cancel (use active geo)
+  IO | EW
+  = inventory, menu
+
 ## 2024-2-26
+
+```js
+class Character {
+    constructor(name, home_addr, relation = '') {
+        this.name = name
+        this.addr = home_addr
+        this.relation = relation
+
+        this.task = ''
+        this.pos = { x: 0, y: 0 }
+        this.face = { x: 1, y: 0 }
+        this.anim = false
+        this.companion = new Array(2)
+        
+        this.inventory = new Inventory()
+    }
+
+    move(env_type, dir, run = false) {
+        if (dir.x !== this.face.x || dir.y !== this.face.y) {
+            this.face.x = dir.x
+            this.face.y = dir.y
+        }
+        else {
+            const speed = run && ['town', 'bldg', 'grass'].includes(env_type) ? 2 * state.speed : state.speed
+            this.pos.x += dir.x * speed
+            this.pos.y += dir.y * speed
+        }
+
+        let animation;
+        switch (env_type) {
+            case 'water':
+                if (dir.x !== 0 || dir.y !== 0)
+                    animation = 'swim'
+                else
+                    animation = 'float'
+                break
+            case 'town':
+            case 'bldg':
+            case 'grass':
+                if (dir.x !== 0 || dir.y !== 0)
+                    if (run)
+                        animation = 'run'
+                    else
+                        animation = 'walk'
+                else
+                    if (objs.length && objs.includes('chair'))
+                        animation = 'sit'
+                    else
+                        animation = 'stand'
+        }
+
+        switch (this.face.x) {
+            case -1:
+                this.anim = flip(anims[animation + '_side'])
+                break
+            case 1:
+                this.anim = anims[animation + '_side']
+                break
+        }
+
+        switch (this.face.y) {
+            case -1:
+                this.anim = anims[animation + '_up']
+                break
+            case 1:
+                this.anim = anims[animation + '_down']
+                break
+        }
+    }
+}
+
+```
 
 When the player activates a character:
 1. Check last activation
