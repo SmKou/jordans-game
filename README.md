@@ -12,6 +12,13 @@ When
 **Spec by:** Jordan (my nephew)
 **Design by:** Stella Marie (Sm Kou)
 
+## Complete Setup
+
+**Deployment**
+```bash
+git subtree push --prefix ui origin gh-pages
+```
+
 ## Known Bugs
 
 ## License
