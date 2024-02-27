@@ -86,9 +86,27 @@ p.speech {
 	background: #eee;
 }
 
-input {
+.user {
 	width: 100%;
 	height: 2.4rem;
+	display: grid;
+	grid-template-columns: 8rem 1fr;
+}
+
+.time {
+	border: 0.1rem solid black;
+	border-top-width: 0.2rem;
+	border-right-width: 0.2rem;
+	font-size: 1.6rem;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+input {
+	width: 100%;
+	height: 100%;
 	border-left: 0;
 	border-right: 0;
 	font-size: 1.6rem; 
