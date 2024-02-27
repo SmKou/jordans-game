@@ -1,35 +1,4 @@
-function init() {
-    const global = {
-        time: {
-            stamp: [0, 0],
-            HOUR: 0,
-            MIN: 1,
-            increment: function() {
-                this.stamp[this.MIN] += 1
-                if (this.stamp[this.MIN] === 60) {
-                    this.stamp[this.HOUR] += 1
-                    this.stamp[this.MIN] = 0
-                }
-                if (this.stamp[this.HOUR] === 24)
-                    this.stamp[this.HOUR] = 0
-            },
-            get_time() {
-                return `${this.stamp[this.HOUR]}:${this.stamp[this.MIN]}`
-            }
-        },
-    }
 
-    const start = () => {
-        setTimeout(() => {
-            global.increment()
-            start()
-        }, 10 * 1000)
-    }
-
-    return {
-        get_time: global.time.get_time
-    }
-}
 
 class Terrain {
     constructor(objects = []) {
@@ -81,7 +50,6 @@ class Segment {
     static type = 'walk'
 
     constructor(name) {
-        super()
         this.name = name
         this.map = []
         this.buildings = []
