@@ -9,6 +9,30 @@
 
 ## 2024-2-26
 
+When the player activates a character:
+1. Check last activation
+2. Assess current activity
+3. Respond
+
+_Check last activation_:
+- Game timestamp
+- Action
+- Status of action
+
+    Example: Player activates mom while baking
+    - Game timestamp: 5 min ago
+    - Action: Bake
+    - Status of action: false
+
+Player: activate
+- door: knock | unlock | open
+- peum: buy | sell | trade | lookup | what are you doing?
+- geo: battle | appeal | capture
+
+Care for a Geo:
+
+Care for a Peum:
+
 ```js
 /*  What are characters capable of?
 
@@ -48,7 +72,6 @@
     Sell (item)
 */
 ```
-
 
 ## 2024-2-25
 
