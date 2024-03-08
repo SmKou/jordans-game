@@ -1,4 +1,3 @@
-import { Canvas } from '@react-three/fiber'
 import { useWindowSize } from './@core/useWindowSize'
 import Game from './@core/Game'
 import Scene from './@core/Scene'
@@ -20,7 +19,7 @@ const urls = [
     ...Object.values(soundData).map(datum => datum.src)
 ].reduce((acc, val) => acc.concat(val), [])
 
-function App() {
+export default function App() {
     const [width, height] = useWindowSize()
     return (
         <div styles={styles.root(width, height)}>
@@ -34,5 +33,3 @@ function App() {
         </div>
     )
 }
-
-export default App
