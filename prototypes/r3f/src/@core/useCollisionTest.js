@@ -1,5 +1,6 @@
 import { useCallback } from "react"
-
+import useGame from './useGame'
+import useGameObject from './useGameObject'
 
 export default function useCollisionTest({ sight = false, hit = false }) {
     const { findGameObjectsByXY } = useGame()

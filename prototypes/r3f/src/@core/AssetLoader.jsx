@@ -1,12 +1,11 @@
 import React, {
     createContext,
-    RefObject,
     useEffect,
     useLayoutEffect,
     useRef,
     useState
 } from 'react'
-import { useStateFromProp } from './helpers'
+import useStateFromProp from './useStateFromProp'
 
 export const AssetLoaderContext = createContext(null)
 

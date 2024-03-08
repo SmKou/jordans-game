@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { createPubSub } from './utils'
+import { createPubSub } from './utils/createPubSub'
 
 export const GameContext = React.createContext(null)
 
