@@ -1,5 +1,9 @@
 import { Canvas } from '@react-three/fiber'
-import { useWindowSize } from './@core/helpers'
+import { useWindowSize } from './@core/useWindowSize'
+import Game from './@core/Game'
+import Scene from './@core/Scene'
+import SceneManager from './@core/SceneManager'
+import AssetLoader from './@core/AssetLoader'
 
 const styles = {
     root: (width, height) => ({
@@ -18,18 +22,17 @@ const urls = [
 
 function App() {
     const [width, height] = useWindowSize()
-  return (
-    <div id="canvas-container">
-      <Canvas>
-        <ambientLight intensity={0.1} />
-        <directionalLight color="red" position={[0, 5, 5]} />
-        <mesh>
-          <sphereGeometry args={[2,2,2]} /> 
-          <meshStandardMaterial />
-        </mesh>
-      </Canvas>
-    </div>
-  )
+    return (
+        <div styles={styles.root(width, height)}>
+            <Game cameraZoom={80}>
+                <AssetLoader urls={urls} placeholder="Loading assets...">
+                    <SceneManager defaultScene="">
+                        <Scene id=""></Scene>
+                    </SceneManager>
+                </AssetLoader>
+            </Game>
+        </div>
+    )
 }
 
 export default App

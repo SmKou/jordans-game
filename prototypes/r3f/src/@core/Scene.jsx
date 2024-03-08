@@ -84,15 +84,12 @@ export default function Scene({ id, children }) {
     )
 
     useEffect(() => {
-        if (currentScene === id)
-            initEvents()
-        else
-            setInstances([])
+        if (currentScene === id) initEvents()
+        else setInstances([])
         return () => window.cancelIdleCallback(idleCallback.current)
     }, [currentScene, id, initEvents])
 
-    if (!currentScene.startsWith(id))
-        return null
+    if (!currentScene.startsWith(id)) return null
 
     return (
         <SceneContext.Provider value={contextValue}>

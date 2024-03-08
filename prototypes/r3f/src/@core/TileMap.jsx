@@ -14,11 +14,8 @@ export default function TileMap({ data, resolver, defineMapSize = false}) {
             setMapSize([sizeX, sizeY])
         }
     }, [mapData, defineMapSize, setMapSize])
-    if (!resolver)
-        return null
+    if (!resolver) return null
     return (
-        <>
-            {mapData.map((row, y) => row.map((type, x) => resolver(type, x, y)))}
-        </>
+        <>{mapData.map((row, y) => row.map((type, x) => resolver(type, x, y)))}</>
     )
 }

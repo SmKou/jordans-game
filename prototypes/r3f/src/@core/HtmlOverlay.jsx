@@ -11,8 +11,7 @@ export default function HtmlOverlay({ children, ...props }) {
             node.current.parentElement.style.whiteSpace = 'nowrap'
         }
     })
-    if (paused)
-        return null
+    if (paused) return null
     return (
         <HTML ref={node} zIndexRange={[0, 0]} eps={0.1} {...props}>
             {children}
