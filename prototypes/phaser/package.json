@@ -25,9 +25,19 @@
         "build": "vite build --config vite/config.prod.mjs"
     },
     "dependencies": {
+        "@emotion/react": "^11.11.4",
+        "@emotion/styled": "^11.11.0",
+        "@fontsource/bangers": "^5.0.19",
+        "@fontsource/monda": "^5.0.12",
+        "@fontsource/mononoki": "^5.0.7",
+        "@fontsource/press-start-2p": "^5.0.19",
+        "@fontsource/sirin-stencil": "^5.0.18",
+        "@fontsource/swanky-and-moo-moo": "^5.0.8",
+        "@mui/material": "^5.15.12",
         "phaser": "^3.80.1",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "zustand": "^4.5.2"
     },
     "devDependencies": {
         "@types/react": "^18.2.58",
