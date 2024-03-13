@@ -1,1 +1,7 @@
-export default function Inventory() {}
+
+
+function Inventory() {
+    
+}
+
+export default Inventory
