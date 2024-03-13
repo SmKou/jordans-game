@@ -190,7 +190,7 @@ Geos are inspired by pokemon. There are 12 types:
 - Krissix: Kristin + phoenix
 - Xielen: Lennie + Xiezhi
 - Zekiu: Zeke + Pixiu
-- Astrel: Stella + 
+- Astel: Stella + 
 - [Lina]
 
 ### Inventory

@@ -1,11 +1,33 @@
 # Journal
 
+[2024 Mar. 13](#2024-3-13)
 [2024 Feb. 26](#2024-2-26)
 [2024 Feb. 25](#2024-2-25) - Opening and transition
 [2024 Feb. 3](#2024-2-3) - Opening dialog
 [2024 Feb. 1](#2024-2-1) - Geo bonding, traits, and battle
 [2024 Jan. 31](#2024-1-31) - Index of cities and geos per route, lexicon for geo-fig language, character stats and traits, and notes on actions
 [2024 Jan. 30](#2024-1-30) - Consideration of research, geo therapist, and mode preference
+
+## 2024-3-13
+
+This whole time, because Jordan's Game is derived from Pokemon, I've been using it as the base model. However, I'm not sure it works anymore. If every geo is unique, what factors determine that they are unique?
+
+Geos, figs, and peums have energy, stamina, and a life essence called memo. While geos can be dark (offensive) or light (defensive), figs and peums can use both dark and light moves. In battle, geos have three modes: standard, shiny and sweet. A standard geo has advances in strength and dealing damage, a shiny geo has advances in speed and evasion, while a sweet geo has advances in resilience, regaining stamina faster and nullifying type advantages. Memo manifests with types, namely dragon, force, lightning, water, ice, fire, poison, psychic, ghost, grass, ground, and rock. Every geo, except two, have one to two evolutions and evolve based on experience and team dynamics. If a geo evolves as soon as it is able, it gains a new move, more power per move, and an ability, whereas if a geo evolves later, it gains the new move, does not gain the ability, and converts the experience gained since into its mode advantages.
+
+_Need to test the battle system._
+
+In the game, there are 6 pokemon, 6 legendaries, and 13 figs. For geos, there are 55 species. There should be something to distinguish the pokemon and geos from the figs and legendaries. Peums have a different system.
+
+### Dream
+
+**Chosen One**
+You are not a chosen one. Do you understand why?
+INPUT => yes | no
+- yes: INPUT => player_answers: why_chosen_one
+A chosen one is not and does not become chosen because they are chosen by others or themselves. They become chosen when they choose the people, to stand for them and to stand with them, and most importantly, the people have all agreed. But not every chosen one is good. Being chosen has nothing to do with whether you or your intent is good or evil.
+So will you be a chosen one?
+INPUT => yes | no
+- yes: If that is so, who are your people? Are you good or evil?
 
 ## 2024-2-27
 
