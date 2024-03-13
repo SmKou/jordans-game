@@ -24,12 +24,43 @@ export default function useInputLayout() {
         const mobile_tablet_regex = new RegExp(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/, 'i')
         const mobile_regex = new RegExp(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/, 'i')
         const touch = touch_regex.test(user_agent) || mobile_tablet_regex.test(user_agent.slice(0, 4))
-        if (touch !== touch_enabled)
+        if (touch !== touch_enabled) {
             setTouchEnabled(touch)
+            storage.add('touch_enabled_setting', touch)
+        }
+            
         const mobile = touch_regex.test(user_agent) || mobile_regex.test(user_agent.slice(0, 4))
-        if (mobile !== is_mobile)
+        if (mobile !== is_mobile) {
             setIsMobile(mobile)
+            storage.add('is_mobile_setting', mobile)
+        }
+            
     }, [user_agent])
 
-    return { touch_enabled, is_mobile }
+    const [user_orients_right, setUserOrientsRight] = useState(storage.get('user_orientation_setting') || true)
+    const toggleUserOrientation = () => {
+        setUserOrientsRight(!user_orients_right)
+        storage.add('user_orientation_setting', !user_orients_right)
+    }
+
+    const [device_orientation, setDeviceOrientation] = useState(touch_enabled ? 'portrait' : 'landscape')
+    const resetOrientation = useCallback(
+        () => {
+            const width = window.innerWidth
+            const height = window.innerHeight
+            const orientation = width > height ? 'landscape' : 'portrait'
+            if (device_orientation !== orientation)
+                setDeviceOrientation(orientation)
+        },
+        [device_orientation, setDeviceOrientation]
+    )
+
+    return { 
+        touch_enabled, 
+        is_mobile, 
+        user_orients_right, 
+        toggleUserOrientation, 
+        device_orientation, 
+        resetOrientation
+    }
 }
