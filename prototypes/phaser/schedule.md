@@ -10,6 +10,8 @@
    - identity and appearance
    - player's geos
 [] Game Scene
+   - movement on tilemap
+   - battle
 [] Game Menu
 [] Inventory
 [] Loading

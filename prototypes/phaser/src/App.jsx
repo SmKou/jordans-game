@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { GameStateValues } from './utils/useGameStorage'
 import { Box } from '@mui/material'
 import StartMenu from './containers/StartMenu'
+import Dream from './containers/Dream'
 
 function App() {
 
@@ -9,7 +10,9 @@ function App() {
     const currentState = () => {
         switch (game_state) {
             case GameStateValues.StartMenu:
-                return <StartMenu setGameState={setGameState}></StartMenu>
+                return <StartMenu setGameState={setGameState} />
+            case GameStateValues.Dream:
+                return <Dream setGameState={setGameState} />
         }
     }
     const [component, setComponent] = useState(currentState())
