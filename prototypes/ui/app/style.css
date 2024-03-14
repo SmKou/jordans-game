@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {}
+
+#StartMenu h1 { font-family: 'Bangers', system-ui }
