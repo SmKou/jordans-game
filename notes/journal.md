@@ -36,6 +36,8 @@ Stats
 - speed
 - evasion
 
+
+
 ## 2024-3-13
 
 This whole time, because Jordan's Game is derived from Pokemon, I've been using it as the base model. However, I'm not sure it works anymore. If every geo is unique, what factors determine that they are unique?

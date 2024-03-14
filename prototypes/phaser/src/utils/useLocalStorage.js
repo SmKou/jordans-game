@@ -46,11 +46,16 @@ export default function useLocalStorage() {
 }
 
 export function useLocalStorageData() {
-    const storage = window.localStorage
+    const storage = useLocalStorage()
+    const data_stored = storage.get('data-stored')
 
     const add = useCallback(
-        (key, item) => {},
+        (key, item) => {
+            
+        },
         [storage]
     )
+
+    
 
 }
