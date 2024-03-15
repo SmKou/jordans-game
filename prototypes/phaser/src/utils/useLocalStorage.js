@@ -12,6 +12,9 @@ export default function useLocalStorage() {
                     item = { fn: item.toString() }
                 storage.setItem(key, JSON.stringify(item))
             },
+            addData(key, item) {
+                
+            },
             get(key) {
                 const item = JSON.parse(storage.getItem(key))
                 if (item.map)

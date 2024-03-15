@@ -1,33 +1,6 @@
 import { useCallback, useMemo } from "react"
 import { gaussianRandom } from "./func"
 
-export const Traits = {
-    types: {
-        DRAGON: 'dragon',
-        ELECTRIC: 'electric',
-        FIRE: 'fire',
-        FORCE: 'force',
-        GHOST: 'ghost',
-        GRASS: 'grass',
-        GROUND: 'ground',
-        ICE: 'ice',
-        POISON: 'poison',
-        PSYCHIC: 'psychic',
-        ROCK: 'rock',
-        WATER: 'water',
-        NORMAL: 'normal'
-    },
-    modes: {
-        STANDARD: 'standard',
-        SHINY: 'shiny',
-        SWEET: 'sweet'
-    },
-    classes: {
-        DARK: 'dark',
-        LIGHT: 'light'
-    }
-}
-
 export const Geos = useMemo(
     () => {
         const hasRareAbility = (ability) => {

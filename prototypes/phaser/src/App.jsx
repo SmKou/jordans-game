@@ -1,22 +1,37 @@
 import React, { useEffect, useState } from 'react'
-import { GameStateValues } from './utils/useGameStorage'
 import { Box } from '@mui/material'
+import useLocalStorage from './utils/useLocalStorage'
+import useDeviceType from './utils/useDeviceType'
 import StartMenu from './containers/StartMenu'
 import Dream from './containers/Dream'
 
-function App() {
+const GameStateValues = {
+    START: 'start-menu',
+    DREAM: 'dream',
+    GAME: 'game-scene',
+    BAG: 'inventory'
+}
 
-    const [game_state, setGameState] = useState(GameStateValues.StartMenu)
-    const currentState = () => {
+function App() {
+    const storage = useLocalStorage()
+    const { touch_enabled, is_mobile } = useDeviceType()
+    const [game_state, setGameState] = useState(GameStateValues.START)
+    const getScene = () => {
         switch (game_state) {
-            case GameStateValues.StartMenu:
+            case GameStateValues.START:
                 return <StartMenu setGameState={setGameState} />
-            case GameStateValues.Dream:
+            case GameStateValues.DREAM:
                 return <Dream setGameState={setGameState} />
         }
     }
-    const [component, setComponent] = useState(currentState())
-    useEffect(() => setComponent(currentState()), [game_state])
+
+    const [device_orientation, setDeviceOrientation] = useState(window.innerWidth > window.innerHeight) // true: landscape
+    const [user_orients_right, setUserOrientsRight] = useState(true)
+    const toggleUserOrientation = () => {
+        const orient = !user_orients_right
+        setUserOrientsRight(orient)
+        storage.add('user_orientation_setting', orient)
+    }
 
     return (
         <Box id="app"
@@ -24,7 +39,7 @@ function App() {
             height="100vh"
             padding="0"
             backgroundColor="#111"
-        >{component}</Box>
+        >{getScene()}</Box>
     )
 }
 
