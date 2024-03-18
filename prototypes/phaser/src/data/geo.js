@@ -22,7 +22,22 @@ export const GeoModes = {
 
 export const GeoClasses = { DARK: 'dark', LIGHT: 'light' }
 
-const Geos = {
+export const GeoCondition = {
+    STANDARD: {
+        BURNED: 'burned',
+        CONFUSED: 'confused',
+        FROZEN: 'frozen',
+        PARALYZED: 'paralyzed',
+        POISONED: 'poisoned',
+    },
+    SPECIAL: {
+        BADLY_POISONED: 'badly-poisoned',
+        FLINCH: 'flinch',
+        LEECH: 'leech'
+    }
+}
+
+export const Geos = {
     "matodipt": {
         name: "matodipt",
         type: GeoTypes.NORMAL,

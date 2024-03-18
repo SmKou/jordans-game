@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react"
+
 export default function useDeviceType() {
     const user_agent = navigator.userAgent || navigator.vendor || window.opera
     const [touch_enabled, setTouchEnabled] = useState(false)
