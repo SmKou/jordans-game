@@ -43,7 +43,15 @@ const Geos = {
             }
         ],
         moves: {
-            dark: [ [], [], [], [], [], [] ],
+            dark: [ 
+                {
+                    name: "transform",
+                    impact: 100,
+                    accuracy: 100,
+                    power: 10,
+                    priority: 0
+                }, 
+                [], [], [], [], [] ],
             light: [ [], [], [], [], [], [] ],
         }
     },
