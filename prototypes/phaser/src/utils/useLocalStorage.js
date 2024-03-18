@@ -17,6 +17,7 @@ export default function useLocalStorage() {
             },
             get(key) {
                 const item = JSON.parse(storage.getItem(key))
+                if (!item) return null;
                 if (item.map)
                     return new Map(item.map)
                 if (item.fn)
