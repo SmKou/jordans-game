@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useMemo } from 'react'
 import { Box } from '@mui/material'
-import useLocalStorage from './utils/useLocalStorage'
+import { useLocalStorage, useOrientation } from '@uidotdev/usehooks'
 import useDeviceType from './utils/useDeviceType'
 
 import { GameStateValues } from './data/values'
@@ -29,20 +29,19 @@ const State = ({ game_state, update, ui }) => {
 }
 
 function App() {
-    const storage = useLocalStorage()
     const { touch_enabled, is_mobile } = useDeviceType()
-    const [device_orientation, setDeviceOrientation] = useState(window.innerWidth > window.innerHeight) // true: landscape
-    const [use_user_input, setUserInput] = useState(false)
-    const [use_dialog, setDialog] = useState(false)
-    const [use_keyboard, setKeyboard] = useState(false)
-    const [game_state, setGameState] = useState(storage.get('game_state') || GameStateValues.START)
+    const device_orientation = useOrientation()
+    const [game_state, setGameState] = useLocalStorage('game_state', GameStateValues.START)
     const updateGameState = useCallback(
         state => {
             setGameState(state)
             setUserInput(state !== GameStateValues.START && state !== GameStateValues.BAG)
         }
     )
-    const [user_orients_right, setUserOrientsRight] = useState(storage.get('user_orientation_setting') || true)
+    const [use_user_input, setUserInput] = useState(false)
+    const [use_dialog, setDialog] = useState(false)
+    const [use_keyboard, setKeyboard] = useState(false)
+    const [user_orients_right, setUserOrientsRight] = useLocalStorage('user_orientation_setting', true)
     const toggleUserOrientation = () => {
         const orient = !user_orients_right
         setUserOrientsRight(orient)

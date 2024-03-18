@@ -1,5 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 import { Box, Typography, Button, Grid, Stack } from '@mui/material'
+import { useWindowSize } from '@uidotdev/usehooks'
 
 const addDialog = ({ dialog }) => (
     <Typography
@@ -56,10 +57,14 @@ const ActionBtn = ({ color, action, text }) => (
     <Btn variant="outlined" color={color} action={action} text={text} />
 )
 
-function UserInput({ update, use_user_input, use_dialog, use_keyboard, data, ui }) {
+function UserInput({ update, use_user_input, use_menu, use_dialog, use_keyboard, data, ui }) {
     if (!use_user_input) 
         return null;
 
+    const height = useWindowSize().height
+
+    const menu_ref = useRef()
+    const [menu_height, setMenuHeight] = useState(0)
     const dialog_ref = useRef()
     const [dialog_width, setDialogWidth] = useState(0)
     const gamepad_ref = useRef()
@@ -73,7 +78,10 @@ function UserInput({ update, use_user_input, use_dialog, use_keyboard, data, ui 
 
     useLayoutEffect(() => {
         setDialogWidth(dialog_ref.current.offsetWidth)
-    }, [])
+
+        const gamepad_height = gamepad_ref.current.offsetHeight
+        setMenuHeight(height - gamepad_height)
+    }, [height])
 
     useEffect(() => {
         if (!touch_enabled || !use_keyboard) return;
@@ -127,6 +135,20 @@ function UserInput({ update, use_user_input, use_dialog, use_keyboard, data, ui 
 
     return (
         <Box width="100%" height="100%">
+            <Box ref={menu_ref}
+                sx={{
+                    position: 'absolute',
+                    right: 0,
+                    top: 0,
+                    height: menu_height
+                }}
+            >
+                {use_menu && 
+                    <Stack>
+                        
+                    </Stack>
+                }
+            </Box>
             <Box
                 display="grid"
                 gridTemplateColumns="1fr 13.2rem"

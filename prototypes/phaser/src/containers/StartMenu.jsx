@@ -1,23 +1,23 @@
 import { useState, useEffect } from 'react'
 import { Container, Stack, Typography, ButtonGroup, Button } from '@mui/material'
-import useLocalStorage from '../utils/useLocalStorage'
+import { useLocalStorage } from '@uidotdev/usehooks'
 import { FontValues, GameStateValues } from '../data/values'
 import '@fontsource/bangers'
 import '@fontsource/sirin-stencil'
 import '@fontsource/swanky-and-moo-moo'
 
 function StartMenu({ update }) {
-    const storage = useLocalStorage()
-    const [loaded, setLoaded] = useState(false)
+    const [opening_scene_done] = useLocalStorage('opening_scene_done', false)
+    const [intro_scene_done] = useLocalStorage('intro_scene_done', false)
+    const [init_scene_done] = useLocalStorage('init_scene_done', false)
+    const [game_state] = useLocalStorage('game_state', GameStateValues.DREAM)
+    const [loaded, setLoaded] = useState(opening_scene_done && intro_scene_done && init_scene_done)
     const [styles, setStyles] = useState({ color: "gray" })
     const [load_text, setLoadText] = useState("Loading")
 
     useEffect(() => {
-        const opening_scene_done = storage.get('opening_scene_done') || false
-        const birth_scene_done = storage.get('birth_scene_done') || false
-        const intro_scene_done = storage.get('intro_scene_done') || false
-        setLoaded(opening_scene_done && birth_scene_done && intro_scene_done)
-    }, [])
+        setLoaded(opening_scene_done && intro_scene_done && init_scene_done)
+    }, [opening_scene_done, intro_scene_done, init_scene_done])
 
     useEffect(() => {
         if (loaded) {
@@ -56,7 +56,7 @@ function StartMenu({ update }) {
                         variant="contained"
                         color="success"
                         disabled={!loaded}
-                        onClick={() => update(storage.get('game_state') || GameStateValues.DREAM)}
+                        onClick={() => update(game_state)}
                     >{load_text}</Button>
                 </Stack>
             </Stack>
