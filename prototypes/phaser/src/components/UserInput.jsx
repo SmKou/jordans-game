@@ -56,7 +56,10 @@ const ActionBtn = ({ color, action, text }) => (
     <Btn variant="outlined" color={color} action={action} text={text} />
 )
 
-function UserInput({ setGameState, use_dialog, use_keyboard, data, ui }) {
+function UserInput({ update, use_user_input, use_dialog, use_keyboard, data, ui }) {
+    if (!use_user_input) 
+        return null;
+
     const dialog_ref = useRef()
     const [dialog_width, setDialogWidth] = useState(0)
     const gamepad_ref = useRef()

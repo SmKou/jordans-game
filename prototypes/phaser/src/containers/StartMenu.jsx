@@ -6,12 +6,11 @@ import '@fontsource/bangers'
 import '@fontsource/sirin-stencil'
 import '@fontsource/swanky-and-moo-moo'
 
-function StartMenu({ setGameState }) {
+function StartMenu({ update }) {
     const storage = useLocalStorage()
     const [loaded, setLoaded] = useState(false)
-    const [variant, setVariant] = useState("outlined")
-    const [color, setColor] = useState("")
-    const [disabled_style, setDisabledStyle] = useState({ color: 'gray', borderColor: 'gray' })
+    const [styles, setStyles] = useState({ color: "gray" })
+    const [load_text, setLoadText] = useState("Loading")
 
     useEffect(() => {
         const opening_scene_done = storage.get('opening_scene_done') || false
@@ -21,9 +20,10 @@ function StartMenu({ setGameState }) {
     }, [])
 
     useEffect(() => {
-        setVariant("contained")
-        setColor("success")
-        setDisabledStyle({ color: 'white', borderColor: 'transparent' })
+        if (loaded) {
+            setLoadText("Load Game")
+            setStyles({ color: "white" })
+        }
     }, [loaded])
 
     return (
@@ -43,22 +43,22 @@ function StartMenu({ setGameState }) {
                     textAlign="center"
                     paddingBottom="3rem"
                 >Happy birthday, Jordan!</Typography>
-                <ButtonGroup fullWidth aria-label="Start Game">
+                <Stack mx="auto" direction="row" spacing={2}>
                     <Button
                         size="medium"
                         variant="contained"
                         color="success"
-                        onClick={() => setGameState(GameStateValues.DREAM)}
+                        onClick={() => update(GameStateValues.DREAM)}
                     >New Game</Button>
                     <Button
                         size="medium"
-                        style={disabled_style}
-                        variant={variant}
-                        color={color}
+                        style={styles}
+                        variant="contained"
+                        color="success"
                         disabled={!loaded}
-                        onClick={() => setGameState(storage.get('game_state'))}
-                    >Load Game</Button>
-                </ButtonGroup>
+                        onClick={() => update(storage.get('game_state') || GameStateValues.DREAM)}
+                    >{load_text}</Button>
+                </Stack>
             </Stack>
         </Container>
     )

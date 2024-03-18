@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useState, useMemo } from 'react'
 import { Box } from '@mui/material'
 import useLocalStorage from './utils/useLocalStorage'
 import useDeviceType from './utils/useDeviceType'
@@ -9,6 +9,24 @@ import UserInput from './components/UserInput'
 
 import StartMenu from './containers/StartMenu'
 import Dream from './containers/Dream'
+import GameScene from './containers/GameScene'
+import BattleScene from './containers/BattleScene'
+import Inventory from './containers/Inventory'
+
+const State = ({ game_state, update, ui }) => {
+    switch (game_state) {
+        case GameStateValues.DREAM:
+            return <Dream />
+        case GameStateValues.GAME:
+            return <GameScene update={update} />
+        case GameStateValues.BATTLE:
+            return <BattleScene update={update} ui={ui} />
+        case GameStateValues.BAG:
+            return <Inventory update={update} ui={ui} />
+        default:
+            return <StartMenu update={update} />
+    }
+}
 
 function App() {
     const storage = useLocalStorage()
@@ -17,7 +35,13 @@ function App() {
     const [use_user_input, setUserInput] = useState(false)
     const [use_dialog, setDialog] = useState(false)
     const [use_keyboard, setKeyboard] = useState(false)
-    const [game_state, setGameState] = useState(GameStateValues.START)
+    const [game_state, setGameState] = useState(storage.get('game_state') || GameStateValues.START)
+    const updateGameState = useCallback(
+        state => {
+            setGameState(state)
+            setUserInput(state !== GameStateValues.START && state !== GameStateValues.BAG)
+        }
+    )
     const [user_orients_right, setUserOrientsRight] = useState(storage.get('user_orientation_setting') || true)
     const toggleUserOrientation = () => {
         const orient = !user_orients_right
@@ -30,6 +54,11 @@ function App() {
     const moveRight = () => {}
     const moveDown = () => {}
 
+    const ui = useMemo(
+        () => ({ touch_enabled, is_mobile, orientation: device_orientation }),
+        [touch_enabled, is_mobile, device_orientation]
+    )
+
     return (
         <Box id="app"
             width="100vw"
@@ -37,14 +66,14 @@ function App() {
             padding="0"
             backgroundColor="#111"
         >
-            { game_state === GameStateValues.DREAM ?  <Dream />
-                : game_state === GameStateValues.GAME ? <></>
-                : game_state === GameStateValues.BATTLE ? <></>
-                : game_state === GameStateValues.BAG ? <></>
-                : <StartMenu setGameState={setGameState} />
-            }
+            <State 
+                game_state={game_state} 
+                update={updateGameState}
+                ui={ui}
+            />
             <UserInput 
-                setGameState={setGameState} 
+                update={updateGameState}
+                use_user_input={use_user_input}
                 use_dialog={use_dialog} 
                 use_keyboard={use_keyboard} 
                 data={{
@@ -53,7 +82,8 @@ function App() {
                     moveRight,
                     moveDown
                 }} 
-                ui={{ touch_enabled, is_mobile, orientation: device_orientation }} />
+                ui={ui} 
+            />
         </Box>
     )
 }
