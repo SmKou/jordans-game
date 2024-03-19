@@ -11,6 +11,7 @@ import StartMenu from './containers/StartMenu'
 import Dream from './containers/Dream'
 import GameScene from './containers/GameScene'
 import BattleScene from './containers/BattleScene'
+import Geos from './containers/Geos'
 import Inventory from './containers/Inventory'
 
 const State = ({ game_state, update, ui }) => {
@@ -21,6 +22,8 @@ const State = ({ game_state, update, ui }) => {
             return <GameScene update={update} />
         case GameStateValues.BATTLE:
             return <BattleScene update={update} ui={ui} />
+        case GameStateValues.GEO:
+            return <Geos update={update} />
         case GameStateValues.BAG:
             return <Inventory update={update} ui={ui} />
         default:

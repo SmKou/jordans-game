@@ -1,8 +1,7 @@
 # Schedule
 
 ## States
-[] Start Menu
-   - load game from memory (localstorage)
+[X] Start Menu
    - load game from file
 [] Dream
    - intro

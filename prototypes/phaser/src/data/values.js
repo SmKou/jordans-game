@@ -3,6 +3,7 @@ export const GameStateValues = {
     DREAM: 'dream',
     GAME: 'game-scene',
     BATTLE: 'battle',
+    GEO: 'geos',
     BAG: 'inventory'
 }
 
