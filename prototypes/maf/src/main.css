@@ -1,0 +1,14 @@
+* { 
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar { display: none }
+
+body {
+    position: relative;
+    margin: 0;
+    background: #222;
+}
