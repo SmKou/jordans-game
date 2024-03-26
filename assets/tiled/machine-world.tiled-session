@@ -1,0 +1,62 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 2
+        },
+        "main-room..tmj": {
+            "scale": 1.9326562499999997,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 160.14229121190073,
+                "y": 96.24060150375942
+            }
+        },
+        "main-room..tmj#floors": {
+            "scaleInDock": 1
+        },
+        "main-room..tmj#indoors": {
+            "scaleInDock": 1
+        },
+        "main-room.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 178.33333333333331,
+                "y": 194
+            }
+        },
+        "main-room.tmx#floors": {
+            "scaleInDock": 1
+        },
+        "main-room.tmx#indoors": {
+            "scaleInDock": 2
+        }
+    },
+    "last.exportedFilePath": "C:/Users/SmKou/Github/_games/jordans-game/assets/tiled",
+    "last.externalTilesetPath": "C:/Users/SmKou/Github/_games/jordans-game/assets/tiled",
+    "last.imagePath": "C:/Users/SmKou/Github/_games/jordans-game/assets",
+    "map.height": 9,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 9,
+    "openFiles": [
+    ],
+    "project": "machine-world.tiled-project",
+    "recentFiles": [
+        "main-room..tmj"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
