@@ -7,10 +7,18 @@ export const start_styles = {
 }
 
 export const container_styles = {
-    width: "100%",
-    height: "100%",
+    width: "100vw",
+    height: "100vh",
+    overflow: "hidden",
     display: "flex",
     flexDirection: "column"
+}
+
+export const styleContainer = (dark) => {
+    const ctnr_styles = {...container_styles}
+    if (dark)
+        ctnr_styles.backgroundColor = "#111"
+    return ctnr_styles
 }
 
 export const user_input_styles = {
@@ -18,8 +26,14 @@ export const user_input_styles = {
     left: 0,
     bottom: 0,
     width: "100%",
-    border: 1,
-    borderColor: "black"
+    backgroundColor: "#1112"
+}
+
+export const styleUserInput = (dark) => {
+    const ui_styles = {...user_input_styles}
+    if (dark)
+        ui_styles.backgroundColor = "#fff2"
+    return ui_styles
 }
 
 export const gamepad_styles = {
@@ -28,3 +42,4 @@ export const gamepad_styles = {
     flexDirection: "column",
     p: "0.6rem"
 }
+

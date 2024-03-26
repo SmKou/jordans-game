@@ -1,5 +1,5 @@
 import { Box, Button, Typography, Dialog, DialogTitle, DialogContent, Stack } from '@mui/material'
-import { yellow } from '@mui/material/colors'
+import { yellow, red } from '@mui/material/colors'
 import { useLocalStorage } from '@uidotdev/usehooks'
 import '@fontsource/monda'
 import '@fontsource/mononoki'
@@ -24,7 +24,9 @@ export const KeyBtn = ({ xs, action, text }) => (
 
 export const DialogText = ({ text, color }) => {
     const [selected_font] = useLocalStorage('dialog_font', 'Mononoki')
-    const font_color = color ? yellow[600] : 'default'
+    const font_color = color === 'active' ? yellow[600] 
+        : color === 'disabled' ? red[500]
+        : 'default'
     return (
         <Typography fontFamily={selected_font + ', monospace'} color={font_color}>{text}</Typography>
     )
@@ -39,7 +41,7 @@ export const DirectionBtn = ({ action, text }) => (
 )
 
 export const ActionBtn = ({ color, action, text }) => (
-    <Btn variant="outlined" color={color} action={action} text={text} />
+    <Btn variant="contained" color={color} action={action} text={text} />
 )
 
 export const DeleteDialog = ({ deleteHistory }) => (

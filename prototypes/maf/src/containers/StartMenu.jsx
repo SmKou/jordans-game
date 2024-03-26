@@ -16,6 +16,8 @@ function StartMenu({ setGameState }) {
     const [opening_scene_done] = useLocalStorage('opening_scene_done', false)
     const [intro_scene_done] = useLocalStorage('intro_scene_done', false)
     const [init_scene_done] = useLocalStorage('init_scene_done', false)
+    const [loaded] = useState(opening_scene_done && intro_scene_done && init_scene_done)
+
     const [delete_history, setDeleteHistory] = useState(false)
 
     const [open_delete_dialog, setOpenDeleteDialog] = useState(false)
@@ -66,12 +68,12 @@ function StartMenu({ setGameState }) {
                     setGameState(GameStateValues.OPENING)
                 break
             case options[1]: // load game
-                if (!init_scene_done)
-                    setGameState(GameStateValues.INIT)
-                else if (!intro_scene_done)
-                    setGameState(GameStateValues.INTRO)
-                else if (!opening_scene_done)
+                if (!loaded) {
                     setGameState(GameStateValues.OPENING)
+                    return;
+                }
+
+                setGameState(GameStateValues.GAME)
                 break
         }
     })
@@ -110,7 +112,13 @@ function StartMenu({ setGameState }) {
                     {show_options && 
                         <Stack width="100%" direction="row" justifyContent="space-evenly">
                             {options.map((option, i) => (
-                                <DialogText key={ids[i]} text={option} color={option === selected_option} />
+                                <DialogText 
+                                    key={ids[i]} text={option} 
+                                    color={
+                                        option === selected_option ? 'active'
+                                        : !loaded && option === options[1] ? 'disabled'
+                                        : 'default'
+                                    } />
                             ))}
                         </Stack>
                     }
