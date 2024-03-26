@@ -11,7 +11,7 @@ import StartMenu from './containers/StartMenu'
 import Dream from './containers/Dream'
 import GameScene from './containers/GameScene'
 import BattleScene from './containers/BattleScene'
-import Inventory from './containers/Inventory'
+import GameBoy from './containers/GameBoy'
 
 const State = ({ game_state, update, ui }) => {
     switch (game_state) {
@@ -22,7 +22,7 @@ const State = ({ game_state, update, ui }) => {
         case GameStateValues.BATTLE:
             return <BattleScene update={update} ui={ui} />
         case GameStateValues.BAG:
-            return <Inventory update={update} ui={ui} />
+            return <GameBoy update={update} ui={ui} />
         default:
             return <StartMenu update={update} />
     }
@@ -35,11 +35,12 @@ function App() {
     const updateGameState = useCallback(
         state => {
             setGameState(state)
-            setUserInput(state !== GameStateValues.START && state !== GameStateValues.BAG)
+            setUserInput(state !== GameStateValues.BAG)
         }
     )
     const [use_user_input, setUserInput] = useState(false)
     const [use_dialog, setDialog] = useState(false)
+    const [use_dialog_options, setDialogOptions] = useState(false)
     const [use_keyboard, setKeyboard] = useState(false)
     const [user_orients_right, setUserOrientsRight] = useLocalStorage('user_orientation_setting', true)
     const toggleUserOrientation = () => {
